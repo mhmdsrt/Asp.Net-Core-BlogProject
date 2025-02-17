@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+
+
+@await Component.InvokeAsync("DashboardAboutWriter")
+
+<div class="row">
+    <div class="col-md-7 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="clearfix">
+                    <h4 class="card-title float-left">Visit And Sales Statistics</h4>
+                    <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-right"></div>
+                </div>
+                <canvas id="visit-sale-chart" class="mt-4"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Traffic Sources</h4>
+                <canvas id="traffic-chart"></canvas>
+                <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Component.InvokeAsync("DasboardAllBlogsByWriter")
+
+@await Component.InvokeAsync("DashboardLastImageByWriter")
+
+
+ @await Component.InvokeAsync("DashboardGetAllCategory")
+
+@* <script src="~/writer/assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="~/writer/assets/vendors/chart.js/Chart.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="~/writer/assets/js/off-canvas.js"></script>
+<script src="~/writer/assets/js/hoverable-collapse.js"></script>
+<script src="~/writer/assets/js/misc.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="~/writer/assets/js/dashboard.js"></script>
+<script src="~/writer/assets/js/todolist.js"></script>
+<!-- End custom js for this page --> *@

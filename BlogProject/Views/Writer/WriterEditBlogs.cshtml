@@ -1,0 +1,70 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Yazar</th>
+        <th>Category</th>
+        <th>Başlık</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Durum</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BlogID</td>
+            <td>@item.Writer.WriterName</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@item.BlogTitle</td>
+            <td>@item.BlogCreateDate.ToShortDateString()</td>
+            @if (item.BlogStatus == true)
+            {
+                <td>Aktif</td>
+            }
+            else if (item.BlogStatus == false)
+            {
+                <td>Pasif</td>
+            }
+            <td><a href="/Blog/UpdateBlog/@item.BlogID" class="btn btn-warning">Güncelle</a></td>
+            <td>
+                @Html.ActionLink(
+                         "Sil",
+                         "DeleteBlog",
+                         "Blog",
+                         new { id = @item.BlogID },
+                         new
+                         {
+                             onclick = "return confirm ('Silmek İstediğinize Eminmisiniz?');",
+                             @class = "btn btn-danger"
+                         }
+                         )
+                @*
+                    @Html.ActionLink() ifadesi:
+                    1.Parametre Link'in adı,kullancıya gösterilecek adı
+                    2.Parametre Linke tıklanıldığında Hangi ActionResult(eylemin,metodun) metodunu gerçekleştireceği
+                    3.Parametre gerçekleşecek olan eylemin(metodun) bulunduğu Controller ismi
+                    4.Parametre Route değeri yani "DeleteCategory" metoduna gönderilecek parametre
+                    5.Parametre şunu yapıyor: linke tıklanıldığında(onclick) 'Silmek istiyor musunuz?' gibi string ifade çıkartan
+                    ve Evet denildiği zaman return true yapan ve 2.Parametredeki ActionResult'u döndürür, hayır denildiği zaman ise
+                    return false döner ve 2.Parametredeki metot(eylem) gerçekleşmez.(Yani onay kutusundan evet denilirse metodu çalıştırır
+                    hayır denilirse iptal eder.)
+                    6.Parametre @class ile css uyguluyoruz.
+                *@
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Blog/InsertBlog" class="btn btn-success">Yeni Blog</a>

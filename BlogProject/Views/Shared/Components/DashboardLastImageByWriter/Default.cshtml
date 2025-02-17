@@ -1,0 +1,25 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<Blog>
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Son Bloglarınız</h4>
+                <div class="d-flex">
+                </div>
+
+                <div class="row mt-3">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-6 pr-1">
+                            <a class="btn" href="/Blog/BlogDetail/@item.BlogID">
+                                <img src="@item.BlogImage" class="mb-2 mw-100 w-100 rounded" alt="image">
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
