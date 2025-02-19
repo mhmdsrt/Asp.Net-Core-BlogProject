@@ -9,14 +9,16 @@ namespace BlogProject.ViewComponents.Blog
 	public class DasboardAllBlogsByWriter : ViewComponent
 	{
 		private readonly IBlogService _blogService;
-		public DasboardAllBlogsByWriter(IBlogService blogService)
+		private readonly IWriterService _writerService;
+		public DasboardAllBlogsByWriter(IBlogService blogService, IWriterService writerService)
 		{
 			_blogService = blogService;
+			_writerService = writerService;
 		}
 		public IViewComponentResult Invoke()
 		{
 
-			return View(_blogService.GetAllBlogByWriter(3));
+			return View(_blogService.GetAllBlogByWriter(_writerService.GetWriterIdByMail(User.Identity.Name)));
 		}
 	}
 }

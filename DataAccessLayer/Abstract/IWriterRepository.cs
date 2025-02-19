@@ -16,5 +16,7 @@ namespace DataAccessLayer.Abstract
    */
     public interface IWriterRepository : IGenericRepository<Writer>
     {
-    }
+        public int GetWriterIdByMail(string writerMail);
+
+	}
 }

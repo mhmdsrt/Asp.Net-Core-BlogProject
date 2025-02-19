@@ -13,7 +13,7 @@ namespace BlogProject.ViewComponents.Blog
 		}
 		public IViewComponentResult Invoke()
 		{
-			return View(_writerService.GetById(3));
+			return View(_writerService.GetById(_writerService.GetWriterIdByMail(User.Identity.Name)));
 		}
 	}
 }

@@ -21,7 +21,7 @@ namespace BlogProject.ViewComponents.Blog
 
 		public IViewComponentResult Invoke()
 		{
-			return View(_blogService.GetLastBlogsByWriter(3));
+			return View(_blogService.GetLastBlogsByWriter(_writerService.GetWriterIdByMail(User.Identity.Name)));
 		}
 	}
 }

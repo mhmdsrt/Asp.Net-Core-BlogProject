@@ -24,6 +24,7 @@ namespace BlogProject.Controllers
 		}
 
 		[HttpPost]
+		// User.Identity.Name ile sisteme başarılı giriş yapmış kullanıcının "ClaimTypes.Name" için oluşturduğumuz değerini alıyoruz biz aşağıda buna mail vermişiz 
 		public async Task<IActionResult> Index(Writer entity)   // Index sayfası varsayılan sayfadır yani Index Action'u varsayılan Action'dur.  Task -> Görev
 		{
 			// FirstOrDefault() -> Belirli filtreleme yaparak belirlik bir koşula uyan ilk değeri getirir eğer yoksa null dönder
@@ -49,7 +50,7 @@ namespace BlogProject.Controllers
 			// Sign In -> Oturum aç
 			// SignInAsync() metodu çağrıldığında Asp.net Core tarayıcıya bir Auyhentication Cookie(Kimlik Doğrulama Çerezi) gönderir ve bu Cookie(Çerez) tarayıcıda kaydedilir ve sayfalarda dolaşırken tekrar giriş yapmasına gerek kalmaz.
 			HttpContext.SignInAsync(claimsPrincipal); //  Parametredeki kullanıcının oturum açmasını sağlar. 
-			return RedirectToAction("Index","Blog");
+			return RedirectToAction("Index","Writer");
 		}
 	}
 }

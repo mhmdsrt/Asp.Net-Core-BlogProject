@@ -11,8 +11,15 @@ namespace DataAccessLayer.Repository
 {
 	public class WriterRepository : GenericRepository<Writer>, IWriterRepository
 	{
+		private readonly Context _context;
 		public WriterRepository(Context context) : base(context)
 		{
+			_context = context;
+		}
+
+		public int GetWriterIdByMail(string writerMail)// Parametre olarak maili verilen yazarın id'sini döndür
+		{
+			return _context.Writers.Where(x => x.WriterMail == writerMail).Select(y => y.WriterID).FirstOrDefault();
 		}
 	}
 	/*

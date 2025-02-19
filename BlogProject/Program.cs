@@ -40,6 +40,7 @@ builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
 builder.Services.AddScoped<IWriterRepository, WriterRepository>();
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IBlogService, BlogService>();
@@ -49,6 +50,7 @@ builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IWriterService, WriterService>();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IMessageService, MessageService>();
 
 
 

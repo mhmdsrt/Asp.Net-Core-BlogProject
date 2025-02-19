@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<Message>
+
+<li class="nav-item dropdown">
+    <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+        <i class="mdi mdi-email-outline"></i>
+        <span class="count-symbol bg-warning"></span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+        <h6 class="p-3 mb-0">Mesajlar</h6>
+        <div class="dropdown-divider"></div>
+        @foreach (var item in Model)
+        {
+            <a class="dropdown-item preview-item" href="/Message/WriterInboxDetail/@item.MessageID">
+                <div class="preview-thumbnail">
+                    <img src="@item.Writer.WriterImage" alt="image" class="profile-pic;" style="object-fit: cover;"> @*style="object-fit: cover -> resmi sığdırır, Görselin düzgün oturmasını sağlar*@
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center" >
+                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">@item.MessageDetails</h6>
+                    <p class="text-gray mb-0">@item.Writer.WriterName</p>
+                </div>
+            </a>
+        }
+        <div class="dropdown-divider"></div>
+        <h6 class="p-3 mb-0 text-center">@ViewBag.MessageCount Yeni Mesaj.</h6>
+    </div>
+</li>

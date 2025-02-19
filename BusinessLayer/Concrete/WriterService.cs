@@ -17,6 +17,10 @@ namespace BusinessLayer.Concrete
             _writerRepository = repository;
 
 		}
+		public int GetWriterIdByMail(string writerMail)
+        {
+            return _writerRepository.GetWriterIdByMail(writerMail);
+        }
 
-    }
+	}
 }

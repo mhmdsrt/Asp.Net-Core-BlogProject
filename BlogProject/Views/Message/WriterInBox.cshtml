@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<Message>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<table class="table table-bordered" style="font-family:'Microsoft Sans Serif'">
+    <tr>
+        <th>Gönderen</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Gönderilme Tarihi</th>
+        <th>Gönderenin Maili</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                <div>
+                    <label class="badge badge-gradient-success">@item.Writer.WriterName</label>
+                </div>
+                <div style="margin-top:5px;">
+                    <a href="/Message/WriterInboxDetail/@item.MessageID">
+                        <img src="@item.Writer.WriterImage" alt="image" class="profile-pic;" style="object-fit: cover; border-radius: 50%; width:60px;height:60px;"> @*style="object-fit: cover -> resmi sığdırır, Görselin düzgün oturmasını sağlar*@
+                    </a>
+                </div>
+            </td>
+            <td>@item.MessageSubject</td>
+            <td>@item.MessageDetails</td>
+            <td>@item.MessageCreateDate</td>
+            <td><label class="badge badge-gradient-success">@item.Writer.WriterMail</label></td>
+        </tr>
+    }
+</table>
+

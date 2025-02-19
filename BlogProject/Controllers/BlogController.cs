@@ -17,12 +17,14 @@ namespace BlogProject.Controllers
 		private readonly IBlogService _blogService;
 		private readonly ICategoryService _categoryService;
 		private readonly ICommentService _commentService;
+		private readonly IWriterService _writerService;
 
-		public BlogController(IBlogService blogService, ICategoryService categoryService, ICommentService commentService)
+		public BlogController(IBlogService blogService, ICategoryService categoryService, ICommentService commentService, IWriterService writerService)
 		{
 			_blogService = blogService;
 			_categoryService = categoryService;
 			_commentService = commentService;
+			_writerService = writerService;
 		}
 		// Index sayfası varsayılan sayfadır yani Index Action'u varsayılan Action'dur.
 
@@ -85,7 +87,7 @@ namespace BlogProject.Controllers
 			}
 
 			entity.BlogStatus = true;
-			entity.WriterID = 3;
+			entity.WriterID = _writerService.GetWriterIdByMail(User.Identity.Name);
 			entity.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
 			_blogService.Insert(entity);
 			return RedirectToAction("Index", "Writer");
@@ -109,7 +111,7 @@ namespace BlogProject.Controllers
 
 			_commentService.DeleteCommentOnTheBlog(id);
 			_blogService.Delete(id);
-			return RedirectToAction("Index", "Writer");
+			return RedirectToAction("WriterEditBlogs", "Writer");
 		}
 
 
@@ -135,9 +137,9 @@ namespace BlogProject.Controllers
 		{
 			entity.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
 			entity.BlogStatus = true;
-			entity.WriterID = 3;
+			entity.WriterID = _writerService.GetWriterIdByMail(User.Identity.Name);
 			_blogService.Update(entity);
-			return RedirectToAction("Index", "Writer");
+			return RedirectToAction("WriterEditBlogs", "Writer");
 		}
 	}
 }

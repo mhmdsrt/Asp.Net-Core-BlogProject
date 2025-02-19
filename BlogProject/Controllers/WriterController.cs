@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BlogProject.Controllers
 {
-	[AllowAnonymous]
+
 	public class WriterController : Controller
 	{
 		private readonly IBlogService _blogService;
@@ -37,7 +37,7 @@ namespace BlogProject.Controllers
 		[HttpGet]
 		public IActionResult WriterEditBlogs()
 		{
-			return View(_blogService.GetAllBlogByWriter(3));
+			return View(_blogService.GetAllBlogByWriter(_writerService.GetWriterIdByMail(User.Identity.Name)));
 		}
 
 
@@ -47,7 +47,7 @@ namespace BlogProject.Controllers
 		public IActionResult GetWriterInformation()
 		{
 			InsertWriterModel ınsertWriterModel = new InsertWriterModel();
-			var writerEntity = _writerService.GetById(3);
+			var writerEntity = _writerService.GetById(_writerService.GetWriterIdByMail(User.Identity.Name));
 			ınsertWriterModel.WriterID = writerEntity.WriterID;
 			ınsertWriterModel.WriterName = writerEntity.WriterName;
 			ınsertWriterModel.WriterAbout = writerEntity.WriterAbout;

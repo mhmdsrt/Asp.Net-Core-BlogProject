@@ -9,5 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IWriterService:IGenericService<Writer>
     {
-    }
+		public int GetWriterIdByMail(string writerMail);
+
+	}
 }
