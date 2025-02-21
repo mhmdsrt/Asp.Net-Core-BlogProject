@@ -11,14 +11,16 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
+				
 					<li class="nav-item">
-						<a class="nav-link" href="/Blog/Index">
-							Anasayfa
+						<a class="nav-link" href="/Blog/Index">Ana Sayfa</a>
+					</li>
+					@await Component.InvokeAsync("UserLayoutHeaderCategoryList")
+					<li class="nav-item">
+						<a class="nav-link" href="/Writer/Index">
+							Profil
 							<span class="sr-only">(current)</span>
 						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/Blog/Index">Bloglar</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="/About/Index">Hakkımızda</a>

@@ -20,7 +20,6 @@ namespace BusinessLayer.ValidationRules
 			RuleFor(x => x.BlogContent).NotEmpty().WithMessage("Boş Geçilemez").MinimumLength(80).WithMessage("Minumum 80 Karakter").
 			MaximumLength(1000).WithMessage("Maksimum 1000 Karakter");
 
-			RuleFor(x => x.BlogThumbnailImage).NotEmpty().WithMessage("Boş Geçilemez");
 
 			RuleFor(x => x.BlogImage).NotEmpty().WithMessage("Boş Geçilemez");
 		}

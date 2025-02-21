@@ -17,6 +17,10 @@ namespace BusinessLayer.Concrete
             _categoryRepository = repository;
 
 		}
+		public string GetCategoryNameById(int id)
+        {
+            return _categoryRepository.GetCategoryNameById(id);
+        }
 
-    }
+	}
 }

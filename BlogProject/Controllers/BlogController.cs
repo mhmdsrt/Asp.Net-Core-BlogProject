@@ -8,9 +8,24 @@ using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using X.PagedList.Extensions;
 
 namespace BlogProject.Controllers
 {
+	/*
+Asenkron metotlar, programın yukarıdan aşağıya doğru çalışmasını durdurmaz, işlemi başlatır ve sonuç gelene kadar diğer kodların çalışmasına izin verir.
+📌 Özetle:
+Senkron metotlar: İşlem tamamlanana kadar kodun ilerlemesini durdurur (bloklar).
+Asenkron metotlar: İşlemi başlatır, ancak sonuç gelene kadar beklemez; programın geri kalanı çalışmaya devam eder.
+
+
+Senkron: Bir restorana gittin, sipariş verdin ve yemeğin gelene kadar garson sana hizmet edemiyor.
+Asenkron: Siparişi verdin, garson mutfağa söyledi ve bu sırada başka müşterilerle ilgileniyor. İşlem tamamlanınca yemeğin getiriliyor. 🍽️
+
+
+Task: Asenkron bir metot, işlemin tamamlanıp tamamlanmadığını takip etmek için Task döndürür. 
+Bu, çağıran tarafın await ile işlemi bekleyebilmesini sağlar.
+	 */
 	[AllowAnonymous]
 	public class BlogController : Controller
 	{
@@ -29,9 +44,9 @@ namespace BlogProject.Controllers
 		// Index sayfası varsayılan sayfadır yani Index Action'u varsayılan Action'dur.
 
 		[HttpGet]
-		public IActionResult Index()
+		public IActionResult Index(int page = 1)
 		{
-			return View(_blogService.GetBlogsWithWriterCategory());
+			return View(_blogService.GetBlogsWithWriterCategory().ToPagedList(page, 2));
 		}
 		/*
 		 Razor Syntax' da @{} ile @() arasındaki fark şudur:
@@ -109,7 +124,7 @@ namespace BlogProject.Controllers
 			//	}
 			//}
 
-			_commentService.DeleteCommentOnTheBlog(id);
+			_commentService.SetNullCommentWillBeDeleteBlog(id);
 			_blogService.Delete(id);
 			return RedirectToAction("WriterEditBlogs", "Writer");
 		}
@@ -140,6 +155,12 @@ namespace BlogProject.Controllers
 			entity.WriterID = _writerService.GetWriterIdByMail(User.Identity.Name);
 			_blogService.Update(entity);
 			return RedirectToAction("WriterEditBlogs", "Writer");
+		}
+
+		public IActionResult GetBlogsByCategory(int id, int page = 1)
+		{
+			ViewBag.CategoryName = _categoryService.GetCategoryNameById(id);
+			return View(_blogService.GetAllBlogsByCategory(id).ToPagedList(page, 1));
 		}
 	}
 }

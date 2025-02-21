@@ -46,7 +46,7 @@ namespace BlogProject.Controllers
 			}
 
 			entity.WriterStatus = true;
-			entity.WriterImage = "deneme";
+			entity.WriterImage = "defaultProfile.png";
 			_writerService.Insert(entity);
 			return RedirectToAction("Index", "Blog");
 		}

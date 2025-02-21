@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BlogProject.Controllers
+namespace BlogProject.Areas.Admin.Controllers
 {
 	[AllowAnonymous]
-	public class AdminController : Controller
+	[Area("Admin")]
+	public class WidgetController : Controller
 	{
 		public IActionResult Index()
 		{

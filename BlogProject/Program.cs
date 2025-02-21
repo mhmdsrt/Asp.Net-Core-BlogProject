@@ -104,9 +104,26 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+//app.UseEndpoints(endpoints =>
+//{
+//	endpoints.MapControllerRoute(
+//		name: "areas",
+//		pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+//	);
 
-app.MapControllerRoute(
+//	endpoints.MapControllerRoute(
+//		name: "default",
+//		pattern: "{controller=Home}/{action=Index}/{id?}"
+//	);
+//});
+
+app.MapControllerRoute( // Bu route eðer Area varsa Areas sayfalar için uygulamanýn baþlangýcýndaki çalýþtýrýlcak Controller ve ActionResult metodunu belirler.
+	name: "areas", // exists -> var olmak
+	pattern: "{area:exists}/{controller=Category}/{action=Index}/{id?}"  // {area:exists} bu route sadece area varsa çalýþýr
+);
+app.MapControllerRoute( // Bu route Areas'da tanýmlý olmayan uygulamanýn baþlangýcýndaki çalýþtýrýlcak Controller ve ActionResult metodunu belirler.
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Blog}/{action=Index}/{id?}");
+
 
 app.Run();

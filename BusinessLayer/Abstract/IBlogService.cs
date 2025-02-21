@@ -15,5 +15,8 @@ namespace BusinessLayer.Abstract
 
 		public IEnumerable<Blog> GetOnlyLastFourBlog(); // Son 4 blogu getir.
 
+		public void SetNullBlogWillBeDeleteCategory(int id); //  Kategoriyi silmeden önce kategoriye ait Blogların KategoriID değerini NULL yap
+		public IEnumerable<Blog> GetAllBlogsByCategory(int id);
+
 	}
 }

@@ -22,18 +22,17 @@ namespace EntityLayer.Concrete
         public int BlogID { get; set; }
         public string? BlogTitle { get; set; }
         public string? BlogContent { get; set; } // Content -> İçerik
-        public string? BlogThumbnailImage { get; set; } // Thumbnail -> küçük resim
         public string? BlogImage { get; set; }
         public DateTime BlogCreateDate { get; set; }
         public bool BlogStatus { get; set; }
 
         public ICollection<Comment> Comments { get; set; } // Bir bloğa ait birden fazla yorum olabileceğinden dolayı.
 
-        public int WriterID { get; set; } // Her Bloğun tek bir yazarı olduğundan dolayı.
+        public int? WriterID { get; set; } // Her Bloğun tek bir yazarı olduğundan dolayı.
 
         public virtual Writer Writer { get; set;} // Üstünden çalıştığımız Blog nesnesi üzerinden ait olduğu Writer'ın propertylerine ulaşabilmek için Navigation Property'sini kullandık.
 
-        public int CategoryID { get; set; } // Foreign Key (İkinci veya yabancı anahtar) tanımlaması yapıyoruz
+        public int? CategoryID { get; set; } // Foreign Key (İkinci veya yabancı anahtar) tanımlaması yapıyoruz
         /*
          "public int CategoryID { get; set; }" kullanma sebebimiz her bloğun ait olduğu bir Category olduğundan dolayıdır.
           Blog tablosuna "CategoryID" diye bir sütun ekler ve Bloğun hangi kategoriye ait olduğunu gösterir.

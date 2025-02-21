@@ -7,7 +7,7 @@
 }
 
 
-<table class="table table-bordered">
+<table class="stylish-table">
 
     <tr>
         <th>ID</th>
@@ -37,8 +37,99 @@
             {
                 <td>Pasif</td>
             }
-            <td><a href="/Blog/UpdateBlog/@item.BlogID" class="btn btn-warning">Güncelle</a></td>
+@*             <td><a href="/Blog/UpdateBlog/@item.BlogID" class="btn btn-warning">Güncelle</a></td>
+ *@            
             <td>
+                <a href="/Blog/UpdateBlog/@item.BlogID" class="action-button update-button">
+                    <i class="fas fa-edit icon"></i> Güncelle
+                </a>
+            </td>
+           
+            <td>
+                <a href="@Url.Action("DeleteBlog", "Blog", new { id = item.BlogID })"
+                   onclick="return confirm('Silmek İstediğinize Emin misiniz?');"
+                   class="action-button delete-button">
+                    <i class="fas fa-trash icon"></i> Sil
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Blog/InsertBlog" class="btn btn-success">Yeni Blog</a>
+
+<style>
+    .stylish-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .stylish-table th, .stylish-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .stylish-table th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .stylish-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .stylish-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    .action-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .delete-button {
+        background-color: #dc3545; /* Kırmızı */
+        color: white;
+    }
+
+        .delete-button:hover {
+            background-color: #c82333;
+            transform: scale(1.05);
+        }
+
+    .update-button {
+        background-color: #ffc107; /* Sarı */
+        color: black;
+    }
+
+        .update-button:hover {
+            background-color: #e0a800;
+            transform: scale(1.05);
+        }
+
+    .icon {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  @*
+       <td>
                 @Html.ActionLink(
                          "Sil",
                          "DeleteBlog",
@@ -61,10 +152,6 @@
                     return false döner ve 2.Parametredeki metot(eylem) gerçekleşmez.(Yani onay kutusundan evet denilirse metodu çalıştırır
                     hayır denilirse iptal eder.)
                     6.Parametre @class ile css uyguluyoruz.
-                *@
+            
             </td>
-        </tr>
-    }
-</table>
-<br />
-<a href="/Blog/InsertBlog" class="btn btn-success">Yeni Blog</a>
+  *@

@@ -11,8 +11,15 @@ namespace DataAccessLayer.Repository
 {
 	public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
 	{
+		private readonly Context _context;
 		public CategoryRepository(Context context) : base(context)
 		{
+			_context = context;
+		}
+
+		public string GetCategoryNameById(int id) // ID ye göre Category Adını döndür
+		{
+			return _context.Categories.Where(x => x.CategoryID == id).Select(n => n.CategoryName).FirstOrDefault();
 		}
 	}
 	/*

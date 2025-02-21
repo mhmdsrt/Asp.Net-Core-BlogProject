@@ -16,7 +16,7 @@ namespace EntityLayer.Concrete
 		public string? MessageDetails { get; set; } // Subject Konu
 		public DateTime MessageCreateDate { get; set; }
 		public bool MessageStatus { get; set; }
-		public int WriterID { get; set; } // Her mesajın bir yazarı olduğundan dolayı.
+		public int? WriterID { get; set; } // Her mesajın bir yazarı olduğundan dolayı.
 		public virtual Writer Writer { get; set; } // Üstünden çalıştığımız Message nesnesi üzerinden ait olduğu Writer'ın propertylerine ulaşabilmek için Navigation Property'sini kullandık.
 	}
 }

@@ -49,7 +49,7 @@ namespace BlogProject.Controllers
 
 			// Sign In -> Oturum aç
 			// SignInAsync() metodu çağrıldığında Asp.net Core tarayıcıya bir Auyhentication Cookie(Kimlik Doğrulama Çerezi) gönderir ve bu Cookie(Çerez) tarayıcıda kaydedilir ve sayfalarda dolaşırken tekrar giriş yapmasına gerek kalmaz.
-			HttpContext.SignInAsync(claimsPrincipal); //  Parametredeki kullanıcının oturum açmasını sağlar. 
+			await HttpContext.SignInAsync(claimsPrincipal); //  Parametredeki kullanıcının oturum açmasını sağlar. 
 			return RedirectToAction("Index","Writer");
 		}
 	}

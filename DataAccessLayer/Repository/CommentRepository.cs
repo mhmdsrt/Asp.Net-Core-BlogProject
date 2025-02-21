@@ -28,6 +28,11 @@ namespace DataAccessLayer.Repository
 			 Select(x=>x...) koleksiyonun her bir öğesini belirli forma dönüştürüp getirir.
 		    */
 		}
+
+		public int GetCommentCountByBlog(int id) // Bloğa ait yorumların sayısını getir
+		{
+			return _context.Comments.Where(x => x.BlogID == id).Count();
+		}
 	}
 
 

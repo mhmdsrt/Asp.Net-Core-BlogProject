@@ -31,9 +31,9 @@ namespace BusinessLayer.Concrete
 	{
 		public string FileAdd(string fileName, IFormFile image) // Parametre olarak dosya adı ve Dosya türünden image diye bir değişken alıyor yani eklenecek resim.
 		{
-			if (image == null)
+			if (image == null || fileName==null)
 			{
-				return "Dosya Seçilmedi!";
+				return "defaultProfile.png";
 			}
 			var extension = Path.GetExtension(fileName);
 			var imageName = Guid.NewGuid() + extension;

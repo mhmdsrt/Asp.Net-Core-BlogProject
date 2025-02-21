@@ -60,9 +60,10 @@ namespace BlogProject.Controllers
 		[HttpPost]
 		public IActionResult GetWriterInformation(InsertWriterModel entity)
 		{
-			var imageName = _fileService.FileAdd(entity.WriterImage.FileName, entity.WriterImage);
-
 			Writer toBeAddedWriter = new Writer();
+			// .FileName ile olmayan birşeyin dosya adına erişmeye calıstıgı zaman program patlıyor
+			// yoksa .FilenName olmasa biz zaten "defaultProfile" string değerini döndüreceğiz sorun olmayacak
+			var imageName = _fileService.FileAdd(entity.WriterImage?.FileName, entity.WriterImage); 
 
 			toBeAddedWriter.WriterID = entity.WriterID;
 			toBeAddedWriter.WriterName = entity.WriterName;

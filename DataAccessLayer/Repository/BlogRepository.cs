@@ -35,21 +35,26 @@ namespace DataAccessLayer.Repository
 
 		}
 
-		public IEnumerable<Blog> GetLastBlogsByWriter(int id) // Yazarın son 4 bloğunu getir
+		public IEnumerable<Blog> GetLastBlogsByWriter(int id) // Yazarın son 4 bloğunu getir Kategori Durumu Aktif Olan
 		{
 
-			return _context.Blogs.Where(x => x.WriterID == id).OrderByDescending(x => x.BlogID).Take(4); // Take(n) -> ilk n kaydır getirir
+			return _context.Blogs.Where(x => x.WriterID == id & x.Category.CategoryStatus==true).OrderByDescending(x => x.BlogID).Take(4); // Take(n) -> ilk n kaydır getirir
 		}
 
-		public IEnumerable<Blog> GetOnlyLastFourBlog() // Son 4 Bloğu getir
+		public IEnumerable<Blog> GetOnlyLastFourBlog() //  Genel Son 4 Bloğu getir.Kategori Durumu Aktif Olan
 		{
 
-			return _context.Blogs.OrderByDescending(x => x.BlogID).Take(4); // Take(n) -> ilk n kaydır getirir
+			return _context.Blogs.Where(x=>x.Category.CategoryStatus == true).OrderByDescending(x => x.BlogID).Take(4); // Take(n) -> ilk n kaydır getirir
 		}
 
-		public IEnumerable<Blog> GetAllBlogByWriter(int id) // ilgili yazarın tüm bloglarını getir.
+		public IEnumerable<Blog> GetAllBlogByWriter(int id) // ilgili yazarın tüm bloglarını getir.Kategori Durumu Aktif Olan
 		{
-			return _context.Blogs.Where(x => x.WriterID == id).Include(x=>x.Category).Include(x=>x.Writer).ToList();
+			return _context.Blogs.Where(x => x.WriterID == id & x.Category.CategoryStatus == true).Include(x=>x.Category).Include(x=>x.Writer).ToList();
+		}
+
+		public IEnumerable<Blog> GetAllBlogsByCategory(int id) // Kategoriye göre blogları getir
+		{
+			return _context.Blogs.Where(x => x.CategoryID == id).Include(y=>y.Category).Include(z=>z.Writer);
 		}
 
 	}

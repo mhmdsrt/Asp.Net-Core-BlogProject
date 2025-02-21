@@ -1,0 +1,188 @@
+﻿@using EntityLayer.Concrete
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="stylish-table">
+    <tr>
+        <th>Kategori</th>
+        <th>Durum</th>
+        <th>Aktif Yap</th>
+        <th>Pasif Yap</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryName</td>
+            @if (item.CategoryStatus == true)
+            {
+                <td><label class="form-label fw-bold" style="color:forestgreen">Aktif</label></td>
+            }
+            else
+            {
+                <td><label class="form-label fw-bold" style="color:red">Pasif</label></td>
+
+            }
+            <td><a class="btn btn-success" style="color:white">Aktif yap</a></td>
+            <td><a class="btn btn-danger" style="color:white">Pasif yap</a></td>
+            <td>
+                <a href="" class="action-button update-button">
+                    <i class="fas fa-edit icon"></i> Güncelle
+                </a>
+            </td>
+            <td>
+                <a href="@Url.Action("DeleteCategory", "Category", new { area = "Admin",id = item.CategoryID })"
+                   onclick="return confirm('Silmek İstediğinize Emin misiniz?');"
+                   class="action-button delete-button">
+                    <i class="fas fa-trash icon"></i> Sil
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<div style="margin-top:10px;">
+    <a href="/Admin/Category/InsertCategory" class="action-button add-button">
+        <i class="fa fa-file icon"></i> Yeni Kategori
+    </a>
+</div>
+<div class="custom-pagination" style="margin-top:20px;display: flex; justify-content: center;">
+    @*display: flex; justify-content: center; -> blok seviyesinde ortalar*@
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", "Category", new { page }))
+    @*
+        page => Url.Action("Index", "Category", new { page }) -> ifadesi her sayfa numarına tıklandığı zaman gideceği Action ve gönderdiği parametreyi gösteriyor
+        (IPagedList)Model -> Controller tarafından gönderilen sayfalanmış Category listesi
+    *@
+</div>
+
+<style>
+    .stylish-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .stylish-table th, .stylish-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .stylish-table th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .stylish-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .stylish-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    .action-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .delete-button {
+        background-color: #dc3545; /* Kırmızı */
+        color: white;
+    }
+
+        .delete-button:hover {
+            background-color: #c82333;
+            transform: scale(1.05);
+        }
+
+    .update-button {
+        background-color: #ffc107; /* Sarı */
+        color: black;
+    }
+
+        .update-button:hover {
+            background-color: #e0a800;
+            transform: scale(1.05);
+        }
+
+    .add-button {
+        background-color: #28a745; /* Yeşil */
+        color: white;
+    }
+
+        .add-button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+
+    .icon {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+
+
+
+
+    label {
+        font-size: 16px; /* Okunaklı bir font boyutu */
+        font-weight: 600; /* Orta kalınlıkta yazı */
+        color: #333; /* Göz yormayan koyu gri renk */
+        margin-bottom: 5px; /* Elemanlar arasında boşluk */
+        display: block; /* Input ile aynı hizada */
+    }
+    
+    /* Şık Sayfalama*/
+    .custom-pagination ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .custom-pagination li {
+        margin: 0 5px;
+    }
+
+    .custom-pagination a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #007bff;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+        .custom-pagination a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .custom-pagination .active a {
+        background-color: #0056b3;
+        color: white;
+        border-color: #0056b3;
+    }
+
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">

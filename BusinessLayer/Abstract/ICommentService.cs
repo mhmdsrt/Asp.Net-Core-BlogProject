@@ -10,6 +10,7 @@ namespace BusinessLayer.Abstract
 	public interface ICommentService : IGenericService<Comment>
 	{
 		IEnumerable<Comment> GetCommentsByBlog(int id);
-		public void DeleteCommentOnTheBlog(int id); // Bloğu silmeden önce bloğa ait yorumla NULL yapma
+		public void SetNullCommentWillBeDeleteBlog(int id); // Bloğu silmeden önce bloğa ait yorumla NULL yapma
+		public int GetCommentCountByBlog(int id);
 	}
 }

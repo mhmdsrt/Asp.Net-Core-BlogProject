@@ -27,8 +27,8 @@
                     <div class="blog-grid-top">
                         <div class="b-grid-top">
                             <div class="blog_info_left_grid">
-                                <a href="single.html">
-                                    <img src="~/BlogTemplate/images/b1.jpg" class="img-fluid" alt="">
+                                <a href="#">
+                                    <img src="@Model.BlogImage" class="img-fluid" alt="">
                                 </a>
                             </div>
                             <div class="blog-info-middle">
@@ -54,12 +54,12 @@
                         </div>
 
                         <h3>
-                            <a href="single.html">@(Model.BlogTitle) </a>
+                            <a href="#">@(Model.BlogTitle) </a>
                         </h3>
                         <p>
                             @(Model.BlogContent)
                         </p>
-                        <a href="single.html" class="btn btn-primary read-m">Read More</a>
+                        <a href="#" class="btn btn-primary read-m">Read More</a>
                     </div>
 
                     @await Component.InvokeAsync("CommentsByBlog", new { id = Model.BlogID })
@@ -133,14 +133,14 @@
                             <h4>Son Eklenen Post</h4>
                             <div class="blog-grids">
                                 <div class="blog-grid-left">
-                                    <a href="single.html">
+                                    <a href="#">
                                         <img src="~/BlogTemplate/images/b1.jpg" class="img-fluid" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-grid-right">
 
                                     <h5>
-                                        <a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
+                                        <a href="#">Pellentesque dui, non felis. Maecenas male</a>
                                     </h5>
                                 </div>
                                 <div class="clearfix"> </div>

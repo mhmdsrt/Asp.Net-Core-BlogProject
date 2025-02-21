@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concrete
+@model Category
+@{
+    ViewData["Title"] = "InsertCategory";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("InsertCategory", "Category", FormMethod.Post, new { area = "Admin" }))
+{
+    <div>
+        <label class="form-label">Kategori Adı</label>
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    </div>
+    <div>
+        <label class="form-label">Açıklama</label>
+        @Html.TextAreaFor(x => x.CategoryDescription, 10, 5, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:10px;">
+        <button class="action-button add-button">
+            <i class="fa fa-creative-commons"></i> Yeni Kategori
+        </button>
+    </div>
+}
+<style>
+    .action-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .add-button {
+        background-color: #28a745; /* Yeşil */
+        color: white;
+    }
+
+        .add-button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+
+    .icon {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">

@@ -10,21 +10,21 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class CommentService : GenericService<Comment>, ICommentService
-    {
-        private readonly ICommentRepository _repository;
-        public CommentService(ICommentRepository repository) : base(repository)
-        {
-            _repository = repository;
+	public class CommentService : GenericService<Comment>, ICommentService
+	{
+		private readonly ICommentRepository _repository;
+		public CommentService(ICommentRepository repository) : base(repository)
+		{
+			_repository = repository;
 
 		}
 
-        public IEnumerable<Comment> GetCommentsByBlog(int id)
-        {
-            return _repository.GetCommentsByBlog(id);
-        }
+		public IEnumerable<Comment> GetCommentsByBlog(int id)
+		{
+			return _repository.GetCommentsByBlog(id);
+		}
 
-        public void DeleteCommentOnTheBlog(int id) // Bloğu silmeden önce bloğa ait yorumla NULL yapma
+		public void SetNullCommentWillBeDeleteBlog(int id) // Bloğu silmeden önce bloğa ait yorumla NULL yapma
 		{
 			/*
 			 İlişkili tablolarda veri silme işlemi için "Set null" yöntemini kullandım
@@ -40,5 +40,11 @@ namespace BusinessLayer.Concrete
 				}
 			}
 		}
-    }
+
+		public int GetCommentCountByBlog(int id)
+		{
+			return _repository.GetCommentCountByBlog(id);
+		}
+
+	}
 }
