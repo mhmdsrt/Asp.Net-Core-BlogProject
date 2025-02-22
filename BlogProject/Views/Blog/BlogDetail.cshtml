@@ -40,12 +40,22 @@
                                     </li>
                                     <li class="mx-2">
                                         <a href="#">
-                                            <i class="far fa-thumbs-up"></i> 201 Likes
+                                            <i class="far fa-user"><label style="margin-left:5px;">@Model.Writer.WriterName</label></i>
+                                        </a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <a href="#">
+                                            <i class="fas fa-envelope"><label style="margin-left:5px;">@Model.Writer.WriterMail</label></i>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="far fa-comment"></i> 15 Comments
+                                            <i class="far fa-comment">@await Component.InvokeAsync("GetCommentCountByBlog", new { id = Model.BlogID })</i>
+                                        </a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <a href="#">
+                                            <i class="fas fa-tags"><label style="margin-left:5px;">@Model.Category.CategoryName</label></i>
                                         </a>
                                     </li>
 

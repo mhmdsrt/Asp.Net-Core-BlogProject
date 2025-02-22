@@ -22,7 +22,6 @@ namespace BusinessLayer.ValidationRules
 
 			RuleFor(x => x.WriterMail).NotEmpty().WithMessage("Boş geçilemez");
 
-			RuleFor(x => x.WriterImage).NotEmpty().WithMessage("Boş geçilemez");
 
 			RuleFor(x => x.WriterPassword).NotEmpty().WithMessage("Boş geçilemez").MinimumLength(4).WithMessage("Minumum 4 karakter girin.").
 				MaximumLength(20).WithMessage("Maksimum 20 karakter girin.");

@@ -2,13 +2,20 @@
 @model IEnumerable<Category>
 
 <div class="tech-btm">
-    <h4>Kategoriler</h4>
+    <h4 style="font-family:Arial">Kategoriler ve Blog Sayıları</h4>
     <ul class="list-group single">
         @foreach (var item in Model)
         {
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                @item.CategoryName
-                <span class="badge badge-primary badge-pill">0</span>
+            <a href="/Blog/GetBlogsByCategory/@item.CategoryID">
+                    <strong style="font-family:'Times New Roman', Times, serif;color:brown;font-size:large">@item.CategoryName   </strong> Blog Sayısı ->
+
+            </a>
+
+                <i><label style="margin-left:5px;">@await Component.InvokeAsync("GetBlogCountByCategory", new { id = item.CategoryID })</label> </i>
+
+
+
             </li>
         }
     </ul>

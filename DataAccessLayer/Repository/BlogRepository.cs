@@ -57,6 +57,26 @@ namespace DataAccessLayer.Repository
 			return _context.Blogs.Where(x => x.CategoryID == id).Include(y=>y.Category).Include(z=>z.Writer);
 		}
 
+		public int GetCountBlogsByCategory(int id) // Kategoriye göre blogların sayısını getir
+		{
+			return _context.Blogs.Where(x => x.CategoryID == id).Count();
+		}
+
+		public Blog GetBlogByIdIncludeWriterCategory(int id) // Id ye göre Bloğu getir ama Kategori ve Yazar ilişkilerini dahil ederek
+		{
+
+			return _context.Blogs.Where(i=>i.BlogID==id).Include(x => x.Category).Include(y => y.Writer).FirstOrDefault();  // Tüm Blogları, Kategori ve Yazarı dahil ederek getir.
+			/*
+			  Include => Dahil etmek.
+			  Then => Daha sonra.
+			  Include() metodu doğrudan ilişkili varlıkları yüklemek için kullanılır.
+			  ThenInclude() metodu iç içe ilişkili varlıkları yüklemek için kullanılır.(Dolaylı yoldan ilişkili olanı getirmek için)
+			  Yukarıda Category ve Writer doğrudan Blog ile ilişkili olduğundan Include() kullandık.			
+			 */
+
+
+		}
+
 	}
 	/*
      Bu class yani BlogRepository sınıfı, Generic_Repository sınıfından <Blog> tipinde miras alarak 

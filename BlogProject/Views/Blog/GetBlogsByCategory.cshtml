@@ -2,12 +2,19 @@
 @using X.PagedList
 @using X.PagedList.Mvc.Core
 @model IPagedList<Blog>
+@*
+	Index sayfası varsayılan(default) sayfadır.
+
+    Razor Syntax' da @{} ile @() arasındaki fark şudur:
+    @{} birden fazla kod satırını çalıştırır ve sonuc html içerisinde gömülmez yani sadece kodları çalıştırır web sayfasına birşey yansımaz.
+	@() ifadesi tek satır kod satırını çalıştırır ve sonuc html içerisine gömülür çalışan kodların sonucu web sayfasında gözükür.
+*@
+
 @{
-    ViewData["Title"] = "GetBlogsByCategory";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
-@*Deneme*@
 <section class="main-content-w3layouts-agileits">
     <div class="container">
         <h3 class="tittle">@ViewBag.CategoryName</h3>
@@ -17,55 +24,58 @@
                 <div class="row">
                     @foreach (var item in Model)
                     {
-                            <div class="col-lg-4 card">
-                                <a href="/Blog/BlogDetail/@item.BlogID">
-                                    <img src="@item.BlogImage" class="card-img-top img-fluid" alt="">
-                                </a>
-                                <div class="card-body">
-                                    <ul class="blog-icons my-4">
+                        <div class="col-lg-4 card">
+                            <a href="/Blog/BlogDetail/@item.BlogID">
+                                <img style="width: 100%; height: 200px; object-fit: cover;" src="@item.BlogImage" class="card-img-top img-fluid" alt="">
+                            </a>
+                            <div class="card-body">
+                                <ul class="blog-icons my-4">
 
-                                        <li>
+                                    <li>
                                         <a href="/Blog/BlogDetail/@item.BlogID">
-                                                <i class="far fa-calendar-alt"></i>@(((DateTime)(@item.BlogCreateDate)).ToString("dd-MMM-yyyy"))
-                                            </a>
-                                        </li>
+                                            <i class="far fa-calendar-alt"><strong style="margin-left:5px;">@(((DateTime)(@item.BlogCreateDate)).ToString("dd-MMM-yyyy"))</strong></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <i class="far fa-comment"><strong>@await Component.InvokeAsync("GetCommentCountByBlog", new { id = item.BlogID })</strong></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-tag"><strong style="margin-left:5px;">@item.Category.CategoryName</strong></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-user"><strong style="margin-left:5px;">@item.Writer.WriterName</strong></i>
+                                        </a>
+                                        <a href="#">
+                                            <img src="~/WriterAddedImages/@item.Writer.WriterImage" alt="image" class="profile-pic;" style="object-fit: cover; border-radius: 50%; width:44px;height:44px; border: 3px solid ;border-color:limegreen"> @*style="object-fit: cover -> resmi sığdırır, Görselin düzgün oturmasını sağlar*@
+                                        </a>
+                                    </li>
 
-                                        <li>
-                                            <a href="#">
-                                                <i class="fas fa-tag"><label style="margin-left:5px;">@item.Category.CategoryName</label></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fas fa-user"><label style="margin-left:5px;">@item.Writer.WriterName</label></i>
-                                            </a>
-                                            <a href="#">
-                                                <img src="~/WriterAddedImages/@item.Writer.WriterImage" alt="image" class="profile-pic;" style="object-fit: cover; border-radius: 50%; width:44px;height:44px; border: 3px solid ;border-color:limegreen"> @*style="object-fit: cover -> resmi sığdırır, Görselin düzgün oturmasını sağlar*@
-                                            </a>
-                                        </li>
 
-
-
-
-                                    </ul>
-                                    <h5 class="card-title">
-                                        <a href="/Blog/BlogDetail/@item.BlogID">@item.BlogTitle</a>
-                                    </h5>
-                                    <p class="card-text mb-3">@(item.BlogContent?.Substring(0, item.BlogContent.Substring(0, 150).LastIndexOf(" ")))... </p>
+                                </ul>
+                                <h5 class="card-title">
+                                    <a href="/Blog/BlogDetail/@item.BlogID">@item.BlogTitle</a>
+                                </h5>
+                                <p class="card-text mb-3">@(item.BlogContent?.Substring(0, item.BlogContent.Substring(0, 150).LastIndexOf(" ")))... </p>
                                 @*
 									substring(startIndex,length) => substring(başlangınçİndeksi,GösterilecekMetninUzunluğu)
 									index değeri o yere kadar metnin uzunlğunu vereceği için böyle bir yapı kuduk.
 								*@
-                                    <a href="/Blog/BlogDetail/@item.BlogID" class="btn btn-primary read-m">Devamını Oku</a>
-                                </div>
+                                <a href="/Blog/BlogDetail/@item.BlogID" class="btn btn-primary read-m">Devamını Oku</a>
                             </div>
+                            <br />
+                        </div>
                     }
                     <!--//left-->
                 </div>
             </div>
         </div>
         <div class="custom-pagination" style="margin-top:20px;display: flex; justify-content: center;">
-            @Html.PagedListPager((IPagedList)Model, page => Url.Action("GetBlogsByCategory", "Blog", new { page }))
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", "Blog", new { page }))
         </div>
 </section>
 

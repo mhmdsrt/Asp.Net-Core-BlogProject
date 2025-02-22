@@ -20,5 +20,7 @@ namespace DataAccessLayer.Abstract
 		public IEnumerable<Blog> GetAllBlogByWriter(int id);
 		public IEnumerable<Blog> GetOnlyLastFourBlog();
 		public IEnumerable<Blog> GetAllBlogsByCategory(int id);
+		public int GetCountBlogsByCategory(int id);
+		public Blog GetBlogByIdIncludeWriterCategory(int id);
 	}
 }

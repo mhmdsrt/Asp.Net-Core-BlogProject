@@ -35,6 +35,9 @@ namespace BlogProject.Controllers
 		{
 			WriterValidator writerValidator = new WriterValidator();
 			ValidationResult validationResult = writerValidator.Validate(entity);
+
+			entity.WriterStatus = true;
+			entity.WriterImage = "defaultProfile.png";
 			if (!validationResult.IsValid) // Eğer Doğrulama Sonuçları geçerli değilse, IsValid -> geçerli
 			{
 				foreach (var item in validationResult.Errors)
@@ -45,10 +48,8 @@ namespace BlogProject.Controllers
 				return View();
 			}
 
-			entity.WriterStatus = true;
-			entity.WriterImage = "defaultProfile.png";
 			_writerService.Insert(entity);
-			return RedirectToAction("Index", "Blog");
+			return RedirectToAction("Index", "Writer");
 		}
 
 

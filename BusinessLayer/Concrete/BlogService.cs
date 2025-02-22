@@ -77,5 +77,14 @@ miras aldığı GenericService<Blog> classının constructor'ırına ": base(rep
 		{
 			return _blogRepository.GetAllBlogsByCategory(id);
 		}
+		public int GetCountBlogsByCategory(int id)
+		{
+			return _blogRepository.GetCountBlogsByCategory(id);
+		}
+
+		public Blog GetBlogByIdIncludeWriterCategory(int id)
+		{
+			return _blogRepository.GetBlogByIdIncludeWriterCategory(id);
+		}
 	}
 }

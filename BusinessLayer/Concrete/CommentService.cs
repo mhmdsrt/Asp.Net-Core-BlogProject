@@ -41,7 +41,7 @@ namespace BusinessLayer.Concrete
 			}
 		}
 
-		public int GetCommentCountByBlog(int id)
+		public int GetCommentCountByBlog(int id) // Bloğa ait yorumların sayısını getir
 		{
 			return _repository.GetCommentCountByBlog(id);
 		}

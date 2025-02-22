@@ -46,7 +46,7 @@ Bu, çağıran tarafın await ile işlemi bekleyebilmesini sağlar.
 		[HttpGet]
 		public IActionResult Index(int page = 1)
 		{
-			return View(_blogService.GetBlogsWithWriterCategory().ToPagedList(page, 2));
+			return View(_blogService.GetBlogsWithWriterCategory().ToPagedList(page, 9));
 		}
 		/*
 		 Razor Syntax' da @{} ile @() arasındaki fark şudur:
@@ -58,7 +58,7 @@ Bu, çağıran tarafın await ile işlemi bekleyebilmesini sağlar.
 		[HttpGet]
 		public IActionResult BlogDetail(int id)
 		{
-			return View(_blogService.GetById(id));
+			return View(_blogService.GetBlogByIdIncludeWriterCategory(id));
 		}
 
 		[HttpGet]
@@ -160,7 +160,7 @@ Bu, çağıran tarafın await ile işlemi bekleyebilmesini sağlar.
 		public IActionResult GetBlogsByCategory(int id, int page = 1)
 		{
 			ViewBag.CategoryName = _categoryService.GetCategoryNameById(id);
-			return View(_blogService.GetAllBlogsByCategory(id).ToPagedList(page, 1));
+			return View(_blogService.GetAllBlogsByCategory(id).ToPagedList(page, 9));
 		}
 	}
 }

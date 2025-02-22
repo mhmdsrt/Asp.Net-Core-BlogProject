@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IBlogService:IGenericService<Blog>
-    {
+	public interface IBlogService : IGenericService<Blog>
+	{
 		IEnumerable<Blog> GetBlogsWithWriterCategory();
 		IEnumerable<Blog> GetLastBlogsByWriter(int id);
 		public IEnumerable<Blog> GetAllBlogByWriter(int id); // ilgili yazarın tüm bloglarını getir.
@@ -17,6 +17,7 @@ namespace BusinessLayer.Abstract
 
 		public void SetNullBlogWillBeDeleteCategory(int id); //  Kategoriyi silmeden önce kategoriye ait Blogların KategoriID değerini NULL yap
 		public IEnumerable<Blog> GetAllBlogsByCategory(int id);
-
+		public int GetCountBlogsByCategory(int id);
+		public Blog GetBlogByIdIncludeWriterCategory(int id);
 	}
 }
