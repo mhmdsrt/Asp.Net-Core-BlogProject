@@ -87,5 +87,10 @@ namespace BlogProject.Controllers
 			_writerService.Update(toBeAddedWriter);
 			return RedirectToAction("Index", "Writer");
 		}
+
+		public IActionResult WriterAbout()
+		{
+			return View(_writerService.GetAll());
+		}
 	}
 }

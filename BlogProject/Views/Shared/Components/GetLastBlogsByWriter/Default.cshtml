@@ -2,27 +2,28 @@
 @model IEnumerable<Blog>
 
 <div class="tech-btm">
-	<h4>Son 4 Bloğununuz</h4>
+    <h4>Yazarın Son 4 Bloğu</h4>
 
-	<div class="blog-grids row mb-3">
-		@foreach(var item in Model){
-		<div class="col-md-5 blog-grid-left">
-			<a href="/Blog/BlogDetail/@item.BlogID">
-					<img style="object-fit: cover; margin-bottom:15px;" src="@item.BlogImage" class="img-fluid" alt="">
-			</a>
-		</div>
-			<br />
-		<div class="col-md-7 blog-grid-right">
+    <div class="blog-grids row mb-3">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-5 blog-grid-left">
+                <a href="/Blog/BlogDetail/@item.BlogID">
+                    <img style="object-fit: cover; margin-bottom:15px;" src="@item.BlogImage" class="img-fluid" alt="">
+                </a>
+            </div>
+            <br />
+            <div class="col-md-7 blog-grid-right">
 
-			<h5>
-					<a href="/Blog/BlogDetail/@item.BlogID">@item.BlogTitle </a>
-			</h5>
-			<div class="sub-meta">
-				<span>
-					<i class="far fa-clock"></i> @(((DateTime)(item.BlogCreateDate)).ToString("dd-MMM-yyyy"))
-					</span>						     
-			</div>
-		</div>
-		}
-	</div>
+                <h5>
+                    <a href="/Blog/BlogDetail/@item.BlogID">@item.BlogTitle </a>
+                </h5>
+                <div class="sub-meta">
+                    <span>
+                        <i class="far fa-clock"></i> @(((DateTime)(item.BlogCreateDate)).ToString("dd-MMM-yyyy"))
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
 </div>

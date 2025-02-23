@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="custom-pagination" style="margin-top:20px;display: flex; justify-content: center;">
-            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", "Blog", new { page }))
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("GetBlogsByCategory", "Blog", new { page }))
         </div>
 </section>
 

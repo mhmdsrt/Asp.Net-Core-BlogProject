@@ -3,26 +3,28 @@
 		<div class="row">
 			<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
 				<h3>Hakkımızda</h3>
-				<p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. lacinia eget consectetur sed, convallis at tellus..</p>
-				<div class="read">
-					<a href="~/BlogTemplate/single.html" class="btn btn-primary read-m">Devamını Oku</a>
-				</div>
+				<p>Bu Web sitesi Muhammed Sert tarafından 2025 yılında Murat Yücedağ Hocamızın Youtube'daki 150 derslik Asp.Net Core Proje Kampı
+					dersini referans alınıp SOLID prensipleri, N Katmanlı Mimari, Dependecy Injection ve Repository Design Pattern gibi konularda eğitim serisinin ufak eksikliklerini ve yanlışlıkları
+					iyileştirilerek ve daha kapsalım bir proje haline getirilerek Cleant Code ilkesine mümkün olduğunda uyulmaya çalışarak yapılmıştır.<br />
+					Bu Projenin en önemli özelliği N Katmanlı Mimari, Generic Repository Design Pattern, Dependecy Injection kritik ve önemli konular işlenmiştir.<br>
+					Bu ücretsiz eğitim serisi hazırladığı her video verdiği her emek için güzel Türkiyemizin yazılım alanında göstermiş olduğu emek ve güzellikleri için en samimi
+					duygularımla teşekkürümü borç bilirim. İyiki varsınız hocam.
+					
+				</p>
 			</div>
 			<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
 				@await Component.InvokeAsync("GetLastBlogs")
 			</div>
 			<!-- subscribe -->
 			<div class="col-lg-4 subscribe-main footer-grid-agileits-w3ls text-left">
-				<h2>Signup to our newsletter</h2>
+				<h2>Düşünceleriniz Bizim İçin Değerli</h2>
 				<div class="subscribe-main text-left">
 					<div class="subscribe-form">
-						<form action="#" method="post" class="subscribe_form">
-							<input class="form-control" type="email" placeholder="Enter your email..." required="">
-							<button type="submit" class="btn btn-primary submit">Submit</button>
+						<form action="/Contact/Index" method="post" class="subscribe_form">
+							<button type="submit" class="btn btn-primary submit">Bize Ulaşın</button>
 						</form>
 						<div class="clearfix"> </div>
 					</div>
-					<p>We respect your privacy.No spam ever!</p>
 				</div>
 				<!-- //subscribe -->
 			</div>
@@ -33,27 +35,15 @@
 				<div class="copyrighttop">
 					<ul>
 						<li class="mx-3">
-							<a class="facebook" href="#">
-								<i class="fab fa-facebook-f"></i>
-								<span>Facebook</span>
+							<a class="facebook" href="https://www.linkedin.com/in/muhammed-sert-b07bb5265/">
+								<i class="fab fa-linkedin"></i>
+								<span>Linkedln</span>
 							</a>
 						</li>
 						<li>
-							<a class="facebook" href="#">
-								<i class="fab fa-twitter"></i>
-								<span>Twitter</span>
-							</a>
-						</li>
-						<li class="mx-3">
-							<a class="facebook" href="#">
-								<i class="fab fa-google-plus-g"></i>
-								<span>Google+</span>
-							</a>
-						</li>
-						<li>
-							<a class="facebook" href="#">
-								<i class="fab fa-pinterest-p"></i>
-								<span>Pinterest</span>
+							<a class="facebook" href="https://github.com/mhmdsrt">
+								<i class="fab fa-github"></i>
+								<span>GitHub</span>
 							</a>
 						</li>
 					</ul>
@@ -62,7 +52,7 @@
 			</div>
 			<div class="w3layouts-agile-copyrightbottom">
 				<p>
-					© @DateTime.Now.Year Weblog. All Rights Reserved | Design by
+					© @DateTime.Now.Year MBlog. Muhammed Sert Tüm Hakları Saklıdır | Design by
 					<a href="http://w3layouts.com/">W3layouts</a>
 				</p>
 

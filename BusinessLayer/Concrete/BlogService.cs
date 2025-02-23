@@ -86,5 +86,9 @@ miras aldığı GenericService<Blog> classının constructor'ırına ": base(rep
 		{
 			return _blogRepository.GetBlogByIdIncludeWriterCategory(id);
 		}
+		public Blog GetLastBlogByCategory(int id) // Kategoriye göre son bloğu getir
+		{
+			return _blogRepository.GetLastBlogByCategory(id);
+		}
 	}
 }

@@ -77,6 +77,10 @@ namespace DataAccessLayer.Repository
 
 		}
 
+		public Blog GetLastBlogByCategory(int id) // Kategoriye göre son bloğu getir
+		{
+			return _context.Blogs.Include(c=>c.Category).Include(w=>w.Writer).Where(x => x.CategoryID == id).OrderByDescending(i => i.BlogID).Take(1).FirstOrDefault();
+		}
 	}
 	/*
      Bu class yani BlogRepository sınıfı, Generic_Repository sınıfından <Blog> tipinde miras alarak 

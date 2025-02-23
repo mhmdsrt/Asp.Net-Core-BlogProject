@@ -1,22 +1,32 @@
 ﻿@using EntityLayer.Concrete
-@model Writer
-<div class="row">
+@model IEnumerable<Writer>
+
+@{
+    ViewData["Title"] = "WriterAbout";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+
+@foreach(var item in Model)
+{
+    <div class="row">
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <div class="d-flex align-items-center">
-                    <img src="~/WriterAddedImages/@Model.WriterImage"
+                    <img src="~/WriterAddedImages/@item.WriterImage"
                          class="profile-img"
                          alt="image">
                     <div class="mb-0 flex-grow" style="margin-left:30px;">
-                        <h5 class="mr-2 mb-2" style="text-align :center;font-size:25px;">@Model.WriterName</h5>
-                        <p class="mb-0 font-weight-light" style="font-family:Bahnschrift;font-size:17px;">@Model.WriterAbout</p>
+                            <h5 class="mr-2 mb-2" style="text-align :center;font-size:25px;">@item.WriterName</h5>
+                            <p class="mb-0 font-weight-light" style="font-family:Bahnschrift;font-size:17px;">@item.WriterAbout</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+}
 
 <style>
 

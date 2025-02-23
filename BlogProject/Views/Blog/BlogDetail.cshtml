@@ -66,7 +66,7 @@
                         <h3>
                             <a href="#">@(Model.BlogTitle) </a>
                         </h3>
-                        <p>
+                        <p class="mb-0 font-weight-light" style="font-family:Bahnschrift;font-size:15px;">
                             @(Model.BlogContent)
                         </p>
                         <a href="#" class="btn btn-primary read-m">Read More</a>
@@ -80,11 +80,12 @@
 
 
 
-                    <div class="comment-top"> @*YORUM EKLEME İŞLEMİ AJAX İLE DAHA SONRA YAPILACAK*@
+                    <div class="comment-top">
+                        @*YORUM EKLEME İŞLEMİ AJAX İLE DAHA SONRA YAPILACAK*@
                         <h4>Yorum Yap</h4>
                         <div class="comment-bottom">
                             <form action="#" method="post">
-                                <input type="hidden" name="BlogID" value="@Model.BlogID"/>
+                                <input type="hidden" name="BlogID" value="@Model.BlogID" />
                                 <input class="form-control" type="text" name="CommentUserName" placeholder="Ad" required="">
                                 <input class="form-control" type="text" name="CommentTitle" placeholder="Başlık" required="">
                                 <textarea class="form-control" name="CommentContent" placeholder="Mesaj" required=""></textarea>
@@ -97,65 +98,44 @@
 
                 <!--//left-->
                 <!--right-->
+                <style>
+                    .profile-img {
+                        width: 320px;
+                        height: 320px;
+                        border-radius: 50%; /* Yuvarlak yapı */
+                        object-fit: cover; /* Görselin düzgün oturmasını sağlar */
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+                        transition: transform 0.3s ease-in-out;
+                    }
+
+                        .profile-img:hover {
+                            transform: scale(1.1); /* Üzerine gelince hafif büyüme efekti */
+                        }
+                </style>
                 <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
                     <div class="right-blog-info text-left">
-                        <div class="tech-btm">
-                            <img src="~/BlogTemplate/images/banner1.jpg" class="img-fluid" alt="">
+                        <div style="display: flex; justify-content: center;">
+                            <h3><label class="badge badge-gradient-success" style="font-family:Georgia;">@Model.Writer.WriterName</label></h3>
                         </div>
+                        <div class="tech-btm" style="display: flex; justify-content: center;">
+                            <img src="~/WriterAddedImages/@Model.Writer.WriterImage"
+                                 class="profile-img"
+                                 alt="image">
+                        </div>
+                        <div style="display: flex; justify-content: center;">
+                            <h5><label class="badge badge-gradient-success" style="font-family:Georgia">Yazar Hakkında</label></h5>
+                        </div>
+
                         <div class="tech-btm">
-                            <h4>Sign up to our newsletter</h4>
-                            <p>Pellentesque dui, non felis. Maecenas male </p>
-                            <form action="#" method="post">
-                                <input type="email" placeholder="Email" required="">
-                                <input type="submit" value="Subscribe">
-                            </form>
+                            <p style="font-family:Bahnschrift;color:darkred">@Model.Writer.WriterAbout</p>
 
                         </div>
 
                         @await Component.InvokeAsync("GetCategoryList")
 
-                        @await Component.InvokeAsync("GetLastBlogsByWriter", new { id = Model.WriterID })
+                        @await Component.InvokeAsync("GetLastBlogsByWriter", new { id = Model.Writer.WriterID })
 
-                        <div class="single-gd my-5 tech-btm">
-                            <h4>Our Progress</h4>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="single-gd tech-btm">
-                            <h4>Son Eklenen Post</h4>
-                            <div class="blog-grids">
-                                <div class="blog-grid-left">
-                                    <a href="#">
-                                        <img src="~/BlogTemplate/images/b1.jpg" class="img-fluid" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-grid-right">
-
-                                    <h5>
-                                        <a href="#">Pellentesque dui, non felis. Maecenas male</a>
-                                    </h5>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                        </div>
+                        @await Component.InvokeAsync("GetLastBlogByCategory", new { id = Model.CategoryID })
                     </div>
 
                 </aside>
