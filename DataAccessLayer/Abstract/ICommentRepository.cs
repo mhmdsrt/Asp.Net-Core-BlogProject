@@ -18,5 +18,6 @@ namespace DataAccessLayer.Abstract
 		public IEnumerable<Comment> GetCommentsByBlog(int id);
 		public int GetCommentCountByBlog(int id);
 
+		public int GetTotalCommentCount();
 	}
 }

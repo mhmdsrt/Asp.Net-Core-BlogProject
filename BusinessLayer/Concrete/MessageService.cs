@@ -32,6 +32,10 @@ namespace BusinessLayer.Concrete
 		{
 			return _messageRepository.GetMessageByIdWithWriter(id);
 		}
+		public int GetTotalMessageCount()
+		{
+			return _messageRepository.GetTotalMessageCount();
+		}
 
 	}
 }

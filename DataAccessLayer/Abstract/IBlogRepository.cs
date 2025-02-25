@@ -23,6 +23,8 @@ namespace DataAccessLayer.Abstract
 		public int GetCountBlogsByCategory(int id);
 		public Blog GetBlogByIdIncludeWriterCategory(int id);
 		public Blog GetLastBlogByCategory(int id); // Kategoriye göre son bloğu getir
+		public int GetTotalBlogCount();
+
 
 	}
 }

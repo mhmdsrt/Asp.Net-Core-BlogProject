@@ -32,5 +32,10 @@ namespace DataAccessLayer.Repository
 		{
 			return _context.Messages.Include(x => x.Writer).Where(y => y.MessageID == id).FirstOrDefault();
 		}
+
+		public int GetTotalMessageCount()
+		{
+			return _context.Messages.Count();
+		}
 	}
 }

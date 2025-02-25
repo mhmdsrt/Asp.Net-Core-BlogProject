@@ -21,6 +21,10 @@ namespace BusinessLayer.Concrete
         {
             return _writerRepository.GetWriterIdByMail(writerMail);
         }
+         public int GetTotalWriterCount()
+        {
+            return _writerRepository.GetTotalWriterCount();
+        }
 
 	}
 }

@@ -21,6 +21,11 @@ namespace DataAccessLayer.Repository
 		{
 			return _context.Writers.Where(x => x.WriterMail == writerMail).Select(y => y.WriterID).FirstOrDefault();
 		}
+
+		public int GetTotalWriterCount()
+		{
+			return _context.Writers.Count();
+		}
 	}
 	/*
      Bu class yani WriterRepository sınıfı, Generic_Repository sınıfından <Writer> tipinde miras alarak 

@@ -46,5 +46,9 @@ namespace BusinessLayer.Concrete
 			return _repository.GetCommentCountByBlog(id);
 		}
 
+		public int GetTotalCommentCount()
+		{
+			return _repository.GetTotalCommentCount();
+		}
 	}
 }

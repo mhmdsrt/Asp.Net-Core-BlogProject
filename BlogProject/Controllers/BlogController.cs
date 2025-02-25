@@ -8,6 +8,7 @@ using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
 using X.PagedList.Extensions;
 
 namespace BlogProject.Controllers
@@ -162,5 +163,24 @@ Bu, çağıran tarafın await ile işlemi bekleyebilmesini sağlar.
 			ViewBag.CategoryName = _categoryService.GetCategoryNameById(id);
 			return View(_blogService.GetAllBlogsByCategory(id).ToPagedList(page, 9));
 		}
+		[HttpPost]
+		public IActionResult InsertCommentByBlog([FromBody] Comment entity)
+		{
+			entity.CommentStatus = true;
+			entity.CommentCreateDate = DateTime.Parse(DateTime.Now.ToLongDateString());
+			_commentService.Insert(entity);
+			return Json(entity);
+			
+		}
+
+		// entity nesnesi, HTTP isteğinin gövdesinden gelen JSON verisini temsil eder.
+		// Örneğin, JSON verisi şu şekilde olabilir:
+		// {
+		//     "CommentUserName": "KullanıcıAdı",
+		//     "CommentTitle": "Başlık",
+		//     "CommentContent": "İçerik",
+		//     "BlogID": 123
+		// }
+		// Bu JSON verisi otomatik olarak `Comment` sınıfına dönüştürülür.
 	}
 }

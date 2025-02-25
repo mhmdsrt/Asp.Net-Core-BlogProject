@@ -12,5 +12,6 @@ namespace BusinessLayer.Abstract
 		IEnumerable<Comment> GetCommentsByBlog(int id);
 		public void SetNullCommentWillBeDeleteBlog(int id); // Bloğu silmeden önce bloğa ait yorumla NULL yapma
 		public int GetCommentCountByBlog(int id);
+		public int GetTotalCommentCount();
 	}
 }

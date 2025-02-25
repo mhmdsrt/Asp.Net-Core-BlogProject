@@ -14,6 +14,29 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
+@* <div>
+    <input type="text" id="TextID" />
+    <button id="btn1">Bas</button>
+</div> *@
+<script src="~/inspinia-gh-pages/js/jquery-3.1.1.min.js"></script>
+@* <script>
+    $("#btn1").click(function(){
+        let id = $("#TextID").val();
+        $.ajax({
+            type:"GET",
+            url:"/Blog/GetByIdBlog/",
+            contentType:"application/json", // gönderilecek verinin formatı
+            dataType:"json", // beklenen cevap türü
+            data:{BlogID:id},
+            success:function(response){
+                console.log(response);
+                console.log("Başarılı");
+            }
+
+
+        });
+    });
+</script> *@
 
 <section class="main-content-w3layouts-agileits">
     <div class="container">
@@ -41,7 +64,7 @@
                                             <i class="far fa-comment"><strong>@await Component.InvokeAsync("GetCommentCountByBlog", new { id = item.BlogID })</strong></i>
                                         </a>
                                     </li>
-                                    
+
                                     <li>
                                         <a href="#">
                                             <i class="fas fa-tag"><strong style="margin-left:5px;">@item.Category.CategoryName</strong></i>

@@ -12,6 +12,8 @@ namespace BusinessLayer.Abstract
 		public IEnumerable<Message> GetAllMessageByReceiver(string receiverMail);
 		public int MessageCountByReceiver(string receiverMail);
 		public Message GetMessageByIdWithWriter(int id);
+		public int GetTotalMessageCount();
+
 
 	}
 }

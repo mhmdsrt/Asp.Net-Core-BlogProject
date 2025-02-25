@@ -81,6 +81,11 @@ namespace DataAccessLayer.Repository
 		{
 			return _context.Blogs.Include(c=>c.Category).Include(w=>w.Writer).Where(x => x.CategoryID == id).OrderByDescending(i => i.BlogID).Take(1).FirstOrDefault();
 		}
+
+		public int GetTotalBlogCount()
+		{
+			return _context.Blogs.Count();
+		}
 	}
 	/*
      Bu class yani BlogRepository sınıfı, Generic_Repository sınıfından <Blog> tipinde miras alarak 

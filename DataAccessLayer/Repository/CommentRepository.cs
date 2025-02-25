@@ -33,6 +33,11 @@ namespace DataAccessLayer.Repository
 		{
 			return _context.Comments.Where(x => x.BlogID == id).Count();
 		}
+
+		public int GetTotalCommentCount()
+		{
+			return _context.Comments.Count();
+		}
 	}
 
 
