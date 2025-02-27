@@ -2,7 +2,7 @@
 @model Blog
 
 <div class="single-gd tech-btm">
-    <h4 style="color:green;font-family:Bahnschrift">Bu Kategoriye Eklenen Son Post</h4>
+    <h4 style="font-family:Bahnschrift;font-size:20px;">Bu Kategoriye Eklenen Son Post</h4>
     <div class="blog-grids">
         <div class="blog-grid-left">
             <a href="/Blog/BlogDetail/@Model.BlogID">
@@ -13,18 +13,18 @@
 
             <div>
                 <h5>
-                    <i class="far fa-user" style="color:green;"><strong style="margin-left:5px;font-family:Bahnschrift;">@Model.Writer.WriterName Tarafından Yazıldı</strong></i>
+                    <i class="far fa-user" style="color:dodgerblue;"><strong style="margin-left:5px;font-family:Bahnschrift;font-size:17px;">@Model.Writer.WriterName Tarafından Yazıldı</strong></i>
                 </h5>
             </div>
            <div style="margin-top:5px;">
                 <h5>
-                    <i class="fas fa-tags" style="color:green"><label style="margin-left:5px;font-family:Bahnschrift;">@Model.Category.CategoryName Kategorisinde Yer Aldı</label></i>
+                    <i class="fas fa-tags" style="color:deepskyblue"><label style="margin-left:5px;font-family:Bahnschrift;font-size:17px;">@Model.Category.CategoryName Kategorisinde Yer Aldı</label></i>
 
                 </h5>
            </div>
           <div>
                 <h5>
-                    <i class="far fa-calendar-alt" style="color:green"><strong style="margin-left:5px;font-family:Bahnschrift;">@(((DateTime)(Model.BlogCreateDate)).ToString("dd-MMM-yyyy")) Tarihinde Oluşturuldu</strong></i>
+                    <i class="far fa-calendar-alt" style="color:lightskyblue"><strong style="margin-left:5px;font-family:Bahnschrift;font-size:17px;">@(((DateTime)(Model.BlogCreateDate)).ToString("dd-MMM-yyyy")) Tarihinde Oluşturuldu</strong></i>
 
                 </h5>
           </div>

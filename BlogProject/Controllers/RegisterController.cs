@@ -3,7 +3,6 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using FluentValidation.Results;
 using DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;

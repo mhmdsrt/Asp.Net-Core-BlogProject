@@ -8,6 +8,7 @@ using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using X.PagedList.Extensions;
 
@@ -44,9 +45,14 @@ Bu, çağıran tarafın await ile işlemi bekleyebilmesini sağlar.
 		}
 		// Index sayfası varsayılan sayfadır yani Index Action'u varsayılan Action'dur.
 
-		[HttpGet]
-		public IActionResult Index(int page = 1)
+		
+		public IActionResult Index(string searchWord,int page = 1)
 		{
+			if (!string.IsNullOrEmpty(searchWord))
+			{
+				return View(_blogService.GetBlogsWithWriterCategory().Where(x=>x.BlogContent.Contains(searchWord) | x.BlogTitle.Contains(searchWord) | x.Writer.WriterName.Contains(searchWord)).ToPagedList(page, 9));
+
+			}
 			return View(_blogService.GetBlogsWithWriterCategory().ToPagedList(page, 9));
 		}
 		/*
@@ -164,10 +170,21 @@ Bu, çağıran tarafın await ile işlemi bekleyebilmesini sağlar.
 			return View(_blogService.GetAllBlogsByCategory(id).ToPagedList(page, 9));
 		}
 		[HttpPost]
-		public IActionResult InsertCommentByBlog([FromBody] Comment entity)
+		public IActionResult InsertCommentByBlog([FromBody] Comment entity) // [FromBody] attribute'i gelen json formatıntak veriyi c# nesnesine dönüştürür, burada Comment nesnesine dönüştürüyoryz
 		{
+			CommentValidator commentValidator = new CommentValidator();
+			ValidationResult validationResult = commentValidator.Validate(entity);
+			if (!validationResult.IsValid)
+			{
+				foreach (var item in validationResult.Errors)
+				{
+					ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+				}
+				return View();
+			}
+
 			entity.CommentStatus = true;
-			entity.CommentCreateDate = DateTime.Parse(DateTime.Now.ToLongDateString());
+			entity.CommentCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
 			_commentService.Insert(entity);
 			return Json(entity);
 			

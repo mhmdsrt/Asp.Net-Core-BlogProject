@@ -1,0 +1,84 @@
+﻿@using EntityLayer.Concrete
+
+<script src="~/inspinia-gh-pages/js/jquery-3.1.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+@* <div class="comment-top">
+    <h4>Yorum Yap</h4>
+    <div class="comment-bottom">
+        <input class="form-control" type="text" id="UserName" placeholder="Ad">
+        <input class="form-control" type="text" id="Title" placeholder="Başlık">
+        <textarea class="form-control" id="Content" placeholder="Mesaj"></textarea>
+        <button class="btn btn-primary submit" id="CommentButton">Gönder</button>
+    </div>
+</div> *@
+
+
+<div class="comment-top">
+    <h4>Yorum Yap</h4>
+    <div class="comment-bottom" >
+
+        <input style="color:black !important; opacity:1!important;" class="form-control" type="text" id="UserName" placeholder="Ad">
+        <input style="color:black !important; opacity:1!important;" class="form-control" type="text" id="Title" placeholder="Başlık">
+        <textarea style="color:black !important; opacity:1!important;"  class="form-control" id="Content" placeholder="Mesaj"></textarea>
+        <button class="btn btn-primary submit" id="CommentButton">Gönder</button>
+    </div>
+</div>
+
+
+
+
+@*    JSON (JavaScript Object Notation), hafif ve okunabilir bir veri formatıdır.
+                          Modern web uygulamalarında, istemci (client) ile sunucu (server) arasında veri alışverişi için JSON yaygın olarak kullanılır.
+                          JSON, JavaScript ile uyumlu olduğu için tarayıcı tabanlı uygulamalarda kolayca işlenebilir.
+                    *@
+<script>
+    $("#CommentButton").click(function(){
+       let commentEntity = {
+           CommentUserName:$("#UserName").val(), // id değeri UserName olan inputtanki veriyi alır.
+           CommentTitle:$("#Title").val(), // id değeri Title olan inputtanki veriyi alır.
+           CommentContent:$("#Content").val(), // id değeri Content olan inputtanki veriyi alır.
+           BlogID : @(ViewBag.BlogID)
+       };
+
+       $.ajax({
+           url:"/Blog/InsertCommentByBlog", // istek atılacak adres
+           type:"post", // http türü
+           contentType:"application/json", // Sunucuya gönderilen verinin formatının json formatında oldugu belirtiyoruz,
+           data:JSON.stringify(commentEntity), // data -> Ajax isteği ile sunucuya gönderilecek veriyi temsil eder. Javascript nesnesinini(commentEntity) json formatına çeviriyoruz
+           dataType:"json",  // sunucudan beklenen cevap türünün json olduğunu belirttik
+           success:function(response){ // işlem başarılı olursa sunucudan gelen cevabı console.log ile console yazdırıyoruz
+               console.log(response);
+
+               // let newComment ile Eklediğimiz yorumu anlık olarak sayfada görebilmek için eklediğimiz yorumu görüntü olarak ekliyoruz sadece.
+               // Sayfa refresh edildiği zaman görüntü olarak eklediğimiz yorum gidiyor aynı yorum veri tabanından çekiliyor böylelikle eklediğimiz yorumu anlık olarak görüp sayfa yenilense bile aynı yerde kalıyor
+               // Eğer let newComment ile eklenen yorumu tarayıcı düzeyinde ekleyip göstermeseydik ekleme işlemi post olmadan dahi yapılsa bile sayfa yenilenmeden eklenen yorumu göremezdik
+               // img src="/BlogTemplate/images/t1.jpg" ifadesindeki tilta yani ~ işaretini kaldırdığımız zaman calısıyor.
+
+               let newComment =
+               `
+                  <div class="media">
+
+        <img src="/BlogTemplate/blogResmi.png" alt="" class="img-fluid" style="object-fit: cover;border-radius: 50%; width:45px;height:45px;" />
+        <div class="media-body">
+
+            <h5 class="mt-0" style="font-family:Georgia; color:darkred">${commentEntity.CommentUserName}</h5>
+            <p style="font-size:14px;">
+              ${commentEntity.CommentContent}
+                <br />
+                <strong style="font-family:Bahnschrift; color:green"> Oluşturulma Tarihi: ${response.commentCreateDate}</strong>
+            </p>
+        </div>
+    </div>
+               `;
+               swal("Başarılı","Yorum Oluşturuldu","success")
+
+               $("#CommentDiv").append(newComment) // append -> eklemek, id değeri CommentDiv olan dive oluşturduğumuz html yapısını ekler
+           },
+           error:function(){
+               swal("HATA!","Yorum Oluşturulamadı! Lütfen yorumunuzu kontrol ediniz.","warning")
+           }
+       });
+    });
+</script>

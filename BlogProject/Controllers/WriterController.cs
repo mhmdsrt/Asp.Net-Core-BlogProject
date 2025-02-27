@@ -88,6 +88,7 @@ namespace BlogProject.Controllers
 			return RedirectToAction("Index", "Writer");
 		}
 
+		[AllowAnonymous]
 		public IActionResult WriterAbout()
 		{
 			return View(_writerService.GetAll());
