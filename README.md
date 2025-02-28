@@ -9,3 +9,4 @@
 #### 💎 FluentValidation Framework
 #### 💎 ViewComponents
 #### 💎 Authentication - Login - LogOut
+#### 💎 Html Helper Usage - Alert - SweetAlert - Pagination - Search - ViewBag - DropDownList - Add File(IFormFile)
