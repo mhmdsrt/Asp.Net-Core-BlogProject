@@ -64,3 +64,5 @@
 ![Ekran Görüntüsü (553)](https://github.com/user-attachments/assets/7f7cca16-c6f3-406a-bafe-f8490ba01989)
 ## Yazar / Kişisel Bilgileri Düzenleme
 ![Ekran Görüntüsü (554)](https://github.com/user-attachments/assets/cbaa9e86-b5ec-4305-a229-fc0ec1027031)
+## Yazar / Blog Güncelleme
+![Ekran Görüntüsü (555)](https://github.com/user-attachments/assets/5002cae9-83f6-4fd5-a2ec-2cef8f030695)
