@@ -22,7 +22,6 @@
 ![Ekran Görüntüsü (536)](https://github.com/user-attachments/assets/3f3b17ab-74a6-49a4-ab32-b9ffe7c26176)
 ## Blog Detayları / Kategoriler ve Blog Sayıları / Blog Yazarının Son Blogların
 ![Ekran Görüntüsü (539)](https://github.com/user-attachments/assets/389542eb-d628-4f49-90eb-3d96b91fa914)
-
 ## Kategorilere Göre Getirme
 ![Ekran Görüntüsü (527)](https://github.com/user-attachments/assets/95ae1807-37df-46b4-ab11-62ec614cd67e)
 ## Ana Sayfa / Footer / En son Eklenen Bloglar
@@ -30,7 +29,7 @@
 ## Oturum Açma
 ![Ekran Görüntüsü (530)](https://github.com/user-attachments/assets/b33303fc-997c-4171-8f5a-9d837b314a0e)
 ## Kayıt Olma - FluentValidation Framework ile doğrulama kontrolleri
-![image](https://github.com/user-attachments/assets/fc59b3e5-774d-46af-aaf1-4248ba9df690)
+![Ekran Görüntüsü (531)](https://github.com/user-attachments/assets/10ce8863-9861-4cfe-a54f-0b7a9f513663)
 ## Kayıt Olma Bilgilendirme Formu - SweetAlert Kullanımı
 ![Ekran Görüntüsü (533)](https://github.com/user-attachments/assets/59564878-00b5-4ddd-bea3-31b94ff77cb3)
 ## Bize Ulaşın
