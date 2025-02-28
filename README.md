@@ -1,4 +1,4 @@
-## Uygulanan ve Kullanılan Konular
+## ✅ Uygulanan ve Kullanılan Konular
 #### 💎 N-Tier Architecture
 #### 💎 MVC (Presentation Layer)
 #### 💎 Generic Repository Design Pattern
