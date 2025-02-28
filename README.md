@@ -62,3 +62,5 @@
 ![Ekran Görüntüsü (552)](https://github.com/user-attachments/assets/ba2eca88-a8a3-4a2a-a7db-f1faffa68a67)
 ## Yazar / Özel Mesaj Oluşturma
 ![Ekran Görüntüsü (553)](https://github.com/user-attachments/assets/7f7cca16-c6f3-406a-bafe-f8490ba01989)
+## Yazar / Kişisel Bilgileri Düzenleme
+![Ekran Görüntüsü (554)](https://github.com/user-attachments/assets/cbaa9e86-b5ec-4305-a229-fc0ec1027031)
