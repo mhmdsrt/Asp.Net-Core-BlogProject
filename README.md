@@ -28,6 +28,8 @@
 ![Ekran Görüntüsü (541)](https://github.com/user-attachments/assets/a261f2c1-d997-4fca-a5f5-15be6de49e88)
 ## Blog Detayları / Ajax ile Sayfa Post Edilmeden Yorumun Eklenmesi ve Kullınıcıya Gösterilmesi 
 ![Ekran Görüntüsü (542)](https://github.com/user-attachments/assets/7284b83d-2ea9-4199-83fa-e21ab9327f12)
+## Yazarlar
+![Ekran Görüntüsü (543)](https://github.com/user-attachments/assets/e52a8ac8-a1da-41c6-b157-d816ca4c8d80)
 ## Kategorilere Göre Getirme
 ![Ekran Görüntüsü (527)](https://github.com/user-attachments/assets/95ae1807-37df-46b4-ab11-62ec614cd67e)
 ## Ana Sayfa / Footer / En son Eklenen Bloglar
