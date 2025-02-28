@@ -29,8 +29,8 @@
 ## Kayıt Olma - FluentValidation Framework ile doğrulama kontrolleri
 ![image](https://github.com/user-attachments/assets/fc59b3e5-774d-46af-aaf1-4248ba9df690)
 ## Kayıt Olma Bilgilendirme Formu - SweetAlert Kullanımı
-![Ekran Görüntüsü (533)](https://github.com/user-attachments/assets/bdfc71fa-eb35-4a26-92e1-e6deb86c5608)
+![Ekran Görüntüsü (533)](https://github.com/user-attachments/assets/59564878-00b5-4ddd-bea3-31b94ff77cb3)
 ## Bize Ulaşın
 ![Ekran Görüntüsü (534)](https://github.com/user-attachments/assets/a5eaf512-d0d5-4cd5-9346-f5debdc35288)
 ## Mail Atma
-![image](https://github.com/user-attachments/assets/40f6222f-5d09-4ed8-a1f5-e14bb8e100d2)
+![Ekran Görüntüsü (535)](https://github.com/user-attachments/assets/0d935d3b-459e-4499-94eb-3ad5cdc31364)
