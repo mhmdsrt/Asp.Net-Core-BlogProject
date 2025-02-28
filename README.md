@@ -20,6 +20,9 @@
 ![Ekran Görüntüsü (526)](https://github.com/user-attachments/assets/2bb01b5f-9b22-4dc7-abc0-757a4ddfb136)
 ## Blog Detayları / Bloğun Yazarı ve Hakkında Bilgileri
 ![Ekran Görüntüsü (536)](https://github.com/user-attachments/assets/3f3b17ab-74a6-49a4-ab32-b9ffe7c26176)
+## Blog Detayları / Kategoriler ve Blog Sayıları / Blog Yazarının Son Blogların
+![Ekran Görüntüsü (539)](https://github.com/user-attachments/assets/389542eb-d628-4f49-90eb-3d96b91fa914)
+
 ## Kategorilere Göre Getirme
 ![Ekran Görüntüsü (527)](https://github.com/user-attachments/assets/95ae1807-37df-46b4-ab11-62ec614cd67e)
 ## Ana Sayfa / Footer / En son Eklenen Bloglar
