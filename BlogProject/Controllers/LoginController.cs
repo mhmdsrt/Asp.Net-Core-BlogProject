@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -51,6 +52,21 @@ namespace BlogProject.Controllers
 			// SignInAsync() metodu çağrıldığında Asp.net Core tarayıcıya bir Auyhentication Cookie(Kimlik Doğrulama Çerezi) gönderir ve bu Cookie(Çerez) tarayıcıda kaydedilir ve sayfalarda dolaşırken tekrar giriş yapmasına gerek kalmaz.
 			await HttpContext.SignInAsync(claimsPrincipal); //  Parametredeki kullanıcının oturum açmasını sağlar. 
 			return RedirectToAction("Index","Writer");
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> LogOut() // LogOut -> Oturumu Kapat , SignOut -> Oturumu Kapat
+		{
+			await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+			/*
+             HttpContext -> Http isteğiyle ilgili tüm bilgilere erişmemizi sağlar.
+            SignOutAsync() metodu -> Kullancının tarayıcısındaki saklanan kimlik doğrulama
+            cookies(çerezlerini) siler. ve kullancının oturumunu sonladırır.
+             
+            CookieAuthenticationDefaults.AuthenticationScheme -> hangi kimlik doğrulama şemasını kullanacağını belirtir.
+            Bunuda biz program.cs de oluşturmuştuk
+            */
+			return RedirectToAction("Index", "Login");
 		}
 	}
 }

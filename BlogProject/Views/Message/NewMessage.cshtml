@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model Message
+@{
+    ViewData["Title"] = "NewMessage";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+@using (Html.BeginForm("NewMessage", "Message", FormMethod.Post))
+{
+    <div>
+        <label class="badge badge-gradient-danger" style="font-size:20px;">
+            Konu
+        </label>
+        @Html.TextBoxFor(s => s.MessageSubject, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label class="badge badge-gradient-danger" style="font-size:20px;">
+            Mesaj İçeriği
+        </label>
+        @Html.TextAreaFor(s => s.MessageDetails, 10, 2, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <div>
+            <label class="badge badge-gradient-danger" style="font-size:20px;">
+                Gönderilecek Kişinin Maili
+            </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.MessageReceiverMail, new { @class = "form-control" })
+        </div>
+    </div>
+    <br />
+
+    <button class="btn btn-gradient-info">Mesajı Gönder</button>
+}
+

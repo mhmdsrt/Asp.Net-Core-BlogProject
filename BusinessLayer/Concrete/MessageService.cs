@@ -36,6 +36,9 @@ namespace BusinessLayer.Concrete
 		{
 			return _messageRepository.GetTotalMessageCount();
 		}
-
+		public Message GetByIdMessageIncludeWriter(int id)
+		{
+			return _messageRepository.GetByIdMessageIncludeWriter(id);
+		}
 	}
 }

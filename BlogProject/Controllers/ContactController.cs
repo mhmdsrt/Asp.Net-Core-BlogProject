@@ -5,11 +5,12 @@ using DataAccessLayer.Concrete;
 using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogProject.Controllers
 {
-
+	[AllowAnonymous]
 	public class ContactController : Controller
 	{
 		private readonly IContactService _contactService;

@@ -14,6 +14,8 @@ namespace BusinessLayer.Abstract
 		public Message GetMessageByIdWithWriter(int id);
 		public int GetTotalMessageCount();
 
+		public Message GetByIdMessageIncludeWriter(int id);
+
 
 	}
 }

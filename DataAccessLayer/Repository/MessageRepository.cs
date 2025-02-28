@@ -37,5 +37,10 @@ namespace DataAccessLayer.Repository
 		{
 			return _context.Messages.Count();
 		}
+
+		public Message GetByIdMessageIncludeWriter(int id) // Parameredeki ıd ye göre mesajı getiren yazarı dahil ederek
+		{
+			return _context.Messages.Where(m => m.MessageID == id).Include(w => w.Writer).FirstOrDefault();
+		}
 	}
 }

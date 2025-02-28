@@ -22,10 +22,30 @@ namespace DataAccessLayer.Repository
 			return _context.Writers.Where(x => x.WriterMail == writerMail).Select(y => y.WriterID).FirstOrDefault();
 		}
 
+		public string GetWriterMailByWriterId(int id) // Parametre olarak id'si verilen yazarın mailini döndür
+		{
+			return _context.Writers.Where(x => x.WriterID == id).Select(y => y.WriterMail).FirstOrDefault();
+		}
 		public int GetTotalWriterCount()
 		{
 			return _context.Writers.Count();
 		}
+
+		public string GetWriterImageById(int id)
+		{
+			return _context.Writers.Where(i => i.WriterID == id).Select(m => m.WriterImage).FirstOrDefault();
+		}
+		public string GetWriterNameById(int id) 
+		{
+			return _context.Writers.Where(i => i.WriterID == id).Select(m => m.WriterName).FirstOrDefault();
+		}
+
+		public string GetWriterMailById(int id)
+		{
+			return _context.Writers.Where(i => i.WriterID == id).Select(m => m.WriterMail).FirstOrDefault();
+		}
+
+		
 	}
 	/*
      Bu class yani WriterRepository sınıfı, Generic_Repository sınıfından <Writer> tipinde miras alarak 
