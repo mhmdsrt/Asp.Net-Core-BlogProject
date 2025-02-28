@@ -70,4 +70,4 @@
 ![Ekran Görüntüsü (556)](https://github.com/user-attachments/assets/652ad091-627d-4c81-aa0f-9667376a1a36)
 ## Dependency Injection 
 ![Ekran Görüntüsü (558)](https://github.com/user-attachments/assets/1d8b9bdd-174f-4da2-92d9-dfe1c5eb70cf)
-![Ekran Görüntüsü (559)](https://github.com/user-attachments/assets/707da2e7-1700-46cb-9420-1ed84907c865)
+![Ekran Görüntüsü (560)](https://github.com/user-attachments/assets/0bf8af9b-98dc-461c-965e-b2a7bf46b10a)
