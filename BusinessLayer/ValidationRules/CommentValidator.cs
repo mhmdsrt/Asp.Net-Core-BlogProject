@@ -12,10 +12,6 @@ namespace BusinessLayer.ValidationRules
     {
 		public CommentValidator()
 		{
-			RuleFor(x => x.CommentTitle)
-				.NotEmpty().WithMessage("Yorum Başlığı Boş Geçilemez")
-				.MaximumLength(40).WithMessage("Maksimum 40 Karakter")
-				.MinimumLength(2).WithMessage("Minumum 2 Karakter");
 
 			RuleFor(x => x.CommentContent)
 				.NotEmpty().WithMessage("Yorum Başlığı Boş Geçilemez")

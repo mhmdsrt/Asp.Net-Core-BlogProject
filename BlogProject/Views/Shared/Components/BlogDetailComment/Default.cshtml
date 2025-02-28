@@ -19,9 +19,9 @@
     <h4>Yorum Yap</h4>
     <div class="comment-bottom" >
 
-        <input style="color:black !important; opacity:1!important;" class="form-control" type="text" id="UserName" placeholder="Ad">
-        <input style="color:black !important; opacity:1!important;" class="form-control" type="text" id="Title" placeholder="Başlık">
-        <textarea style="color:black !important; opacity:1!important;"  class="form-control" id="Content" placeholder="Mesaj"></textarea>
+        <input style="color:black !important; opacity:1!important;" class="form-control" type="text" id="UserName" placeholder="Takma Ad">
+@*         <input style="color:black !important; opacity:1!important;" class="form-control" type="text" id="Title" placeholder="Başlık">
+ *@        <textarea style="color:black !important; opacity:1!important;"  class="form-control" id="Content" placeholder="Mesaj"></textarea>
         <button class="btn btn-primary submit" id="CommentButton">Gönder</button>
     </div>
 </div>
@@ -37,7 +37,7 @@
     $("#CommentButton").click(function(){
        let commentEntity = {
            CommentUserName:$("#UserName").val(), // id değeri UserName olan inputtanki veriyi alır.
-           CommentTitle:$("#Title").val(), // id değeri Title olan inputtanki veriyi alır.
+           // CommentTitle:$("#Title").val(), // id değeri Title olan inputtanki veriyi alır.
            CommentContent:$("#Content").val(), // id değeri Content olan inputtanki veriyi alır.
            BlogID : @(ViewBag.BlogID)
        };

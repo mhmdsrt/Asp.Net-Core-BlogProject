@@ -182,7 +182,7 @@ Bu, çağıran tarafın await ile işlemi bekleyebilmesini sağlar.
 				}
 				return View();
 			}
-
+			entity.CommentTitle = "Default";
 			entity.CommentStatus = true;
 			entity.CommentCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
 			_commentService.Insert(entity);

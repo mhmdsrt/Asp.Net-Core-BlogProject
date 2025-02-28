@@ -1,7 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BlogProject.Areas.Admin.ViewComponents
+namespace BlogProject.ViewComponents.TotalCount
 {
 	public class GetTotalMessageCount:ViewComponent
 	{
