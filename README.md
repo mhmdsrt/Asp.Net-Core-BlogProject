@@ -69,6 +69,6 @@
 ## DataBase
 ![Ekran Görüntüsü (556)](https://github.com/user-attachments/assets/652ad091-627d-4c81-aa0f-9667376a1a36)
 ## Dependency Injection 
-![image](https://github.com/user-attachments/assets/123346cf-2baa-4d99-b873-99e4da424329)
+![image](https://github.com/user-attachments/assets/35d99d10-6b16-4967-9878-c2f78e5a76bb)
 ![image](https://github.com/user-attachments/assets/cb5977ec-d92b-4726-b054-a341e44f5e35)
 
