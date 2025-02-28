@@ -1,4 +1,4 @@
-## ✅ Uygulanan ve Kullanılan Konular
+## 📌 Blog Projesinin İçeriği
 #### 💎 N-Tier Architecture
 #### 💎 MVC (Presentation Layer)
 #### 💎 Generic Repository Design Pattern
