@@ -24,7 +24,10 @@
 ![Ekran Görüntüsü (539)](https://github.com/user-attachments/assets/389542eb-d628-4f49-90eb-3d96b91fa914)
 ## Blog Detayları / Tıklanan Bloğun Bulunduğu Kategoriye Eklenen Son Bloğun Yazarı, Kategorisi ve Oluşturulma Tarihi
 ![Ekran Görüntüsü (540)](https://github.com/user-attachments/assets/59cabbaf-5a01-4452-a09a-d5fa13fc7514)
-
+## Blog Detayları /  Bloğa Anonim Yorum Yapma / Doğrulama Kontrollerinden Geçemeyen Yorumun Hata Mesajı
+![Ekran Görüntüsü (541)](https://github.com/user-attachments/assets/a261f2c1-d997-4fca-a5f5-15be6de49e88)
+## Blog Detayları / Ajax ile Sayfa Post Edilmeden Yorumun Eklenmesi ve Kullınıcıya Gösterilmesi 
+![Ekran Görüntüsü (542)](https://github.com/user-attachments/assets/7284b83d-2ea9-4199-83fa-e21ab9327f12)
 ## Kategorilere Göre Getirme
 ![Ekran Görüntüsü (527)](https://github.com/user-attachments/assets/95ae1807-37df-46b4-ab11-62ec614cd67e)
 ## Ana Sayfa / Footer / En son Eklenen Bloglar
