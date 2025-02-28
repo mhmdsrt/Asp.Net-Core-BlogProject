@@ -26,7 +26,7 @@
 ![Ekran Görüntüsü (540)](https://github.com/user-attachments/assets/59cabbaf-5a01-4452-a09a-d5fa13fc7514)
 ## Blog Detayları /  Bloğa Anonim Yorum Yapma / Doğrulama Kontrollerinden Geçemeyen Yorumun Hata Mesajı
 ![Ekran Görüntüsü (541)](https://github.com/user-attachments/assets/a261f2c1-d997-4fca-a5f5-15be6de49e88)
-## Blog Detayları / Ajax ile Sayfa Post Edilmeden Yorumun Eklenmesi ve Kullınıcıya Gösterilmesi 
+## Blog Detayları / Ajax ile Sayfa Post Edilmeden Yorumun Eklenmesi ve Kullanıcıya Gösterilmesi 
 ![Ekran Görüntüsü (542)](https://github.com/user-attachments/assets/7284b83d-2ea9-4199-83fa-e21ab9327f12)
 ## Yazarlar
 ![Ekran Görüntüsü (543)](https://github.com/user-attachments/assets/e52a8ac8-a1da-41c6-b157-d816ca4c8d80)
@@ -44,3 +44,21 @@
 ![Ekran Görüntüsü (534)](https://github.com/user-attachments/assets/a5eaf512-d0d5-4cd5-9346-f5debdc35288)
 ## Mail Atma
 ![Ekran Görüntüsü (535)](https://github.com/user-attachments/assets/0d935d3b-459e-4499-94eb-3ad5cdc31364)
+## Yazar / Profil
+![Ekran Görüntüsü (544)](https://github.com/user-attachments/assets/660fe3e1-8256-4ceb-ba89-7f809fc56cfc)
+## Yazar / Son Bloglar
+![Ekran Görüntüsü (545)](https://github.com/user-attachments/assets/222c2358-2e6c-4e45-b420-efaac62ff4cb)
+## Yazar / Kategoriler ve İstatistik
+![Ekran Görüntüsü (546)](https://github.com/user-attachments/assets/60e9bef4-bb64-46d0-b2b2-2c6df5de78cb)
+## Yazar / Blog Düzenleme
+![Ekran Görüntüsü (547)](https://github.com/user-attachments/assets/6e978437-4210-4d99-a4a1-ac92f436053a)
+## Yazar / Yeni Blog Ekleme
+![Ekran Görüntüsü (548)](https://github.com/user-attachments/assets/e986f071-682d-4120-b0ef-228aee0afbb1)
+## Yazar / Gelen Mesajlar
+![Ekran Görüntüsü (550)](https://github.com/user-attachments/assets/0f519924-af4d-4c06-994a-90fab00ac10b)
+## Yazar / Gelen Mesajın Ayrıntıları
+![Ekran Görüntüsü (551)](https://github.com/user-attachments/assets/91dd0949-fbfb-460c-994c-7bd9dbcb513f)
+## Yazar / Gelene Mesajı Cevaplama
+![Ekran Görüntüsü (552)](https://github.com/user-attachments/assets/ba2eca88-a8a3-4a2a-a7db-f1faffa68a67)
+## Yazar / Özel Mesaj Oluşturma
+![Ekran Görüntüsü (553)](https://github.com/user-attachments/assets/7f7cca16-c6f3-406a-bafe-f8490ba01989)
