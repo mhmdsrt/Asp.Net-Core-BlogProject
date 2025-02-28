@@ -24,7 +24,7 @@
 ![Ekran Görüntüsü (528)](https://github.com/user-attachments/assets/ac8432fc-f02d-46b9-9b64-3805031845cf)
 ### Oturum Açma
 ![Ekran Görüntüsü (530)](https://github.com/user-attachments/assets/b33303fc-997c-4171-8f5a-9d837b314a0e)
-### Kayıt Olma
+### Kayıt Olma - FluentValidation Framework ile doğrulama kontrolleri
 ![image](https://github.com/user-attachments/assets/fc59b3e5-774d-46af-aaf1-4248ba9df690)
-### Kayıt Olma Bilgilendirme Formu
-![Ekran Görüntüsü (531)](https://github.com/user-attachments/assets/7590062f-460f-4347-977f-596903559f79)
+### Kayıt Olma Bilgilendirme Formu - SweetAlert Kullanımı
+![Ekran Görüntüsü (533)](https://github.com/user-attachments/assets/bdfc71fa-eb35-4a26-92e1-e6deb86c5608)
