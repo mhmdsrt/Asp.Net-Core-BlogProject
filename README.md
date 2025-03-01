@@ -66,6 +66,9 @@
 ![Ekran Görüntüsü (554)](https://github.com/user-attachments/assets/cbaa9e86-b5ec-4305-a229-fc0ec1027031)
 ## Yazar / Blog Güncelleme
 ![Ekran Görüntüsü (555)](https://github.com/user-attachments/assets/5002cae9-83f6-4fd5-a2ec-2cef8f030695)
+## Yanlış URL sonucu yönlendirilen hata sayfası
+![Ekran Görüntüsü (561)](https://github.com/user-attachments/assets/b06ec1d8-748e-40be-8736-259bd2405776)
+
 ## DataBase
 ![Ekran Görüntüsü (556)](https://github.com/user-attachments/assets/652ad091-627d-4c81-aa0f-9667376a1a36)
 ## Dependency Injection 
