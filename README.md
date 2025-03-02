@@ -1,4 +1,4 @@
-## 🎯 Projemi 3 dakikalık video ile Linkedln üzerinden paylaştım. İzlemek isterseniz : https://www.linkedin.com/feed/update/urn:li:activity:7301354693484552192/
+### 🎯 Projemi 3 dakikalık video ile Linkedln üzerinden paylaştım. İzlemek isterseniz : https://www.linkedin.com/feed/update/urn:li:activity:7301354693484552192/
 ## 📌 Blog Projesinin İçeriği
 #### 💎 N-Tier Architecture
 #### 💎 MVC (Presentation Layer)
