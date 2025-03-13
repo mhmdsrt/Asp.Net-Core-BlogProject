@@ -11,7 +11,7 @@
 #### 💎 ViewComponents
 #### 💎 Authentication - Login - LogOut
 #### 💎 Html Helper Usage - Alert - SweetAlert - Pagination - Search - ViewBag - DropDownList - Add File(IFormFile)
-##### N Katmanlı Mimari ve  Generic Repository Design Pattern üzerine kurulu projemde kullanıcıların sisteme kayıt olup, sisteme başarılı giriş yaptıktan sonra Yazar olarak Blog oluşturabildiği, anonim olarak bloglara AJAX ile sayfa post edilmeden yorum yapılabildiği, Yazarların birbirine mesaj gönderebildiği, doğrulama işlemleri için Fluent Validation kullandığım, Sunum katmanında MVC ile beraber çok sayıda View Component ve daha fazlasını kullandığım bir Blog projesi.
+#### ✅ N Katmanlı Mimari ve  Generic Repository Design Pattern üzerine kurulu projemde kullanıcıların sisteme kayıt olup, sisteme başarılı giriş yaptıktan sonra Yazar olarak Blog oluşturabildiği, anonim olarak bloglara AJAX ile sayfa post edilmeden yorum yapılabildiği, Yazarların birbirine mesaj gönderebildiği, doğrulama işlemleri için Fluent Validation kullandığım, Sunum katmanında MVC ile beraber çok sayıda View Component ve daha fazlasını kullandığım bir Blog projesi.
 ## Ana Sayfa / Header
 ## Her bir Blog'ta şu bilgiler getirilir: 
 - Yazarının İsmi ve Resmi 
