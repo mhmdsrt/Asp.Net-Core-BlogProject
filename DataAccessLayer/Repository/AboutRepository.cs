@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repository
 {
+/*
+  Miras Aldığı GenericRepository<About> Constructor'ırına Program.cs'de yazılan Dependecy Injection
+  ile buraya context nesnesi enjekte ediliyor ve enjekte edilen context nesneside GenericRepository classına gönderiliyor.
+  Böylelikle AboutRepository Classından bir nesne oluşturulduğu anda tek bir context nesnesi oluşturup, oluşturulan 
+  About2Repository nesnesi üzerinden aynı Context nesnesi kullanılır..
+*/
 	public class AboutRepository : GenericRepository<About>, IAboutRepository
 	{
 		/*
