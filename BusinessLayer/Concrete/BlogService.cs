@@ -35,9 +35,12 @@ Bu, çağıran tarafın await ile işlemi bekleyebilmesini sağlar.
 			_blogRepository = repository;
 		}
 		/*
-		 Eğer yukarıda IBlogRepository yerine BlogRepository kullansaydık BlogService doğrudan somut BlogRepository'e sıkı bağımlı olucaktı ve esneklik azalacaktı.
+		 Eğer yukarıda IBlogRepository yerine BlogRepository kullansaydık BlogService doğrudan somut BlogRepository'e sıkı bağımlı olucaktı ve esneklik azalacaktı.Böylelikle gevşek bağımlılık sağlanıyor
 		 Ayrıca bu kullanım sayesinde Moq kütüphanesini kullnarak Mock(Tatlit) nesnesi ile Unit Test yapılabilir böylece gerçek veritabanına bağlı olmadan BlogService test edilebilir
 		 Yani BlogRepository'deki yapılan değişiklikler BlogService'i doğrudan etkiliyecekti.
+		 Ayrıca BlogRepository kullanılsaydı, BlogRepository değiştirmek istediğimiz zaman BlogService'de değiştirmek zorunda kalıcaktık.
+		Özet: BlogService'in IBlogRepository'i implement eden BlogRepository'den başka BlogRepository2 diye bir repository kullanılmaya ihtiyaç olabilme 
+		ihtimalini olabileceğinden dolayı böyle yapıyoruz.
 		 */
 		public IEnumerable<Blog> GetBlogsWithWriterCategory()
 		{
